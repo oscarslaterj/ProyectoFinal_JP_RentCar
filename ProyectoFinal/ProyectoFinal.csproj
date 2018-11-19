@@ -57,6 +57,7 @@
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Clientes.cs" />
     <Compile Include="Entidades\Usuarios.cs" />
+    <Compile Include="Entidades\VehiculosDetalle.cs" />
     <Compile Include="Mainform.cs">
       <SubType>Form</SubType>
     </Compile>

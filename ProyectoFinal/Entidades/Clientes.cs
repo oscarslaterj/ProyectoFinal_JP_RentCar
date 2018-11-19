@@ -18,6 +18,8 @@ namespace ProyectoFinal.Entidades
         public string Telefono { get; set; }
         public DateTime FechaNacimiento { get; set; }
 
+        public virtual List<VehiculosDetalle> Vehiculos { get; set; }
+
         public Clientes()
         {
             ClienteId = 0;
@@ -26,6 +28,8 @@ namespace ProyectoFinal.Entidades
             Direccion = string.Empty;
             Telefono = string.Empty;
             FechaNacimiento = DateTime.Now;
+
+            Vehiculos = new List<VehiculosDetalle>();
         }
 
     }

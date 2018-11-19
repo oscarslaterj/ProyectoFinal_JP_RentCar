@@ -35,7 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ModeloTextBox = new System.Windows.Forms.TextBox();
             this.MarcaTextBox = new System.Windows.Forms.TextBox();
-            this.ColorTextBox = new System.Windows.Forms.TextBox();
+            this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.PlacaTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.AnioTextBox = new System.Windows.Forms.TextBox();
@@ -104,12 +104,12 @@
             this.MarcaTextBox.Size = new System.Drawing.Size(182, 20);
             this.MarcaTextBox.TabIndex = 5;
             // 
-            // ColorTextBox
+            // PrecioTextBox
             // 
-            this.ColorTextBox.Location = new System.Drawing.Point(93, 213);
-            this.ColorTextBox.Name = "ColorTextBox";
-            this.ColorTextBox.Size = new System.Drawing.Size(119, 20);
-            this.ColorTextBox.TabIndex = 6;
+            this.PrecioTextBox.Location = new System.Drawing.Point(93, 213);
+            this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.Size = new System.Drawing.Size(119, 20);
+            this.PrecioTextBox.TabIndex = 6;
             // 
             // PlacaTextBox
             // 
@@ -273,7 +273,7 @@
             this.Controls.Add(this.AnioTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.PlacaTextBox);
-            this.Controls.Add(this.ColorTextBox);
+            this.Controls.Add(this.PrecioTextBox);
             this.Controls.Add(this.MarcaTextBox);
             this.Controls.Add(this.ModeloTextBox);
             this.Controls.Add(this.label4);
@@ -297,7 +297,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox ModeloTextBox;
         private System.Windows.Forms.TextBox MarcaTextBox;
-        private System.Windows.Forms.TextBox ColorTextBox;
+        private System.Windows.Forms.TextBox PrecioTextBox;
         private System.Windows.Forms.TextBox PlacaTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox AnioTextBox;
