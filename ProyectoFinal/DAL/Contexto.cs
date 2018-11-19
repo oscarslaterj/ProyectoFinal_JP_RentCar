@@ -10,7 +10,7 @@ namespace ProyectoFinal.DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Clientes> Cliente{ get; set; }
+        public DbSet<Clientes> Clientes{ get; set; }
 
         public Contexto() : base("Constr") { }
     }
