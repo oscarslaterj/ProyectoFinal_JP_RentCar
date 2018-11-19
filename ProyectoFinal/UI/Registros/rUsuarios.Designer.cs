@@ -43,6 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UserIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -145,7 +146,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(322, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(403, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(66, 61);
             this.pictureBox1.TabIndex = 11;
@@ -175,6 +176,19 @@
             this.EliminarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.EliminarButton.UseVisualStyleBackColor = false;
             // 
+            // BuscarButton
+            // 
+            this.BuscarButton.BackColor = System.Drawing.Color.White;
+            this.BuscarButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
+            this.BuscarButton.Location = new System.Drawing.Point(287, 12);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(91, 35);
+            this.BuscarButton.TabIndex = 21;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BuscarButton.UseVisualStyleBackColor = false;
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,7 +196,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(411, 301);
+            this.ClientSize = new System.Drawing.Size(481, 301);
+            this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.pictureBox1);
@@ -223,5 +238,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button BuscarButton;
     }
 }

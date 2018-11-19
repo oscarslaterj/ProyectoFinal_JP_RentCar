@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace ProyectoFinal.UI.Registros
 {
-    public partial class rClientes : Form
+    public partial class rVehiculos : Form
     {
-        public rClientes()
+        public rVehiculos()
         {
             InitializeComponent();
         }
-
-     
     }
 }
