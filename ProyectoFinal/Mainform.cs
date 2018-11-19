@@ -29,5 +29,11 @@ namespace ProyectoFinal
             rClientes c = new rClientes();
             c.Show();
         }
+
+        private void vehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVehiculos v = new rVehiculos();
+            v.Show();
+        }
     }
 }

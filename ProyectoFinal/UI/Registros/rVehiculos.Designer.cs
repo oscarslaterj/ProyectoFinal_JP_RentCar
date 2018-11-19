@@ -49,13 +49,15 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TipoComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Location = new System.Drawing.Point(12, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 0;
@@ -64,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 74);
+            this.label2.Location = new System.Drawing.Point(12, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 1;
@@ -73,16 +75,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 105);
+            this.label3.Location = new System.Drawing.Point(12, 220);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Color";
+            this.label3.Text = "Precio Renta";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 136);
+            this.label4.Location = new System.Drawing.Point(12, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 3;
@@ -90,28 +92,28 @@
             // 
             // ModeloTextBox
             // 
-            this.ModeloTextBox.Location = new System.Drawing.Point(93, 42);
+            this.ModeloTextBox.Location = new System.Drawing.Point(93, 73);
             this.ModeloTextBox.Name = "ModeloTextBox";
             this.ModeloTextBox.Size = new System.Drawing.Size(182, 20);
             this.ModeloTextBox.TabIndex = 4;
             // 
             // MarcaTextBox
             // 
-            this.MarcaTextBox.Location = new System.Drawing.Point(93, 73);
+            this.MarcaTextBox.Location = new System.Drawing.Point(93, 101);
             this.MarcaTextBox.Name = "MarcaTextBox";
             this.MarcaTextBox.Size = new System.Drawing.Size(182, 20);
             this.MarcaTextBox.TabIndex = 5;
             // 
             // ColorTextBox
             // 
-            this.ColorTextBox.Location = new System.Drawing.Point(93, 104);
+            this.ColorTextBox.Location = new System.Drawing.Point(93, 213);
             this.ColorTextBox.Name = "ColorTextBox";
             this.ColorTextBox.Size = new System.Drawing.Size(119, 20);
             this.ColorTextBox.TabIndex = 6;
             // 
             // PlacaTextBox
             // 
-            this.PlacaTextBox.Location = new System.Drawing.Point(93, 135);
+            this.PlacaTextBox.Location = new System.Drawing.Point(93, 129);
             this.PlacaTextBox.Name = "PlacaTextBox";
             this.PlacaTextBox.Size = new System.Drawing.Size(119, 20);
             this.PlacaTextBox.TabIndex = 7;
@@ -119,7 +121,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 168);
+            this.label5.Location = new System.Drawing.Point(12, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 8;
@@ -127,14 +129,14 @@
             // 
             // AnioTextBox
             // 
-            this.AnioTextBox.Location = new System.Drawing.Point(93, 166);
+            this.AnioTextBox.Location = new System.Drawing.Point(93, 157);
             this.AnioTextBox.Name = "AnioTextBox";
             this.AnioTextBox.Size = new System.Drawing.Size(119, 20);
             this.AnioTextBox.TabIndex = 9;
             // 
             // DescripcionTextBox
             // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(93, 197);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(93, 185);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(253, 20);
             this.DescripcionTextBox.TabIndex = 11;
@@ -142,7 +144,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 202);
+            this.label6.Location = new System.Drawing.Point(12, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 10;
@@ -152,7 +154,7 @@
             // 
             this.FechaRegistroDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaRegistroDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(93, 228);
+            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(93, 250);
             this.FechaRegistroDateTimePicker.Name = "FechaRegistroDateTimePicker";
             this.FechaRegistroDateTimePicker.Size = new System.Drawing.Size(118, 20);
             this.FechaRegistroDateTimePicker.TabIndex = 21;
@@ -160,7 +162,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 236);
+            this.label7.Location = new System.Drawing.Point(8, 254);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 20;
@@ -187,9 +189,9 @@
             this.BuscarButton.BackColor = System.Drawing.Color.White;
             this.BuscarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(330, 12);
+            this.BuscarButton.Location = new System.Drawing.Point(314, 7);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(91, 35);
+            this.BuscarButton.Size = new System.Drawing.Size(90, 39);
             this.BuscarButton.TabIndex = 24;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -199,7 +201,7 @@
             // 
             this.EliminarButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
-            this.EliminarButton.Location = new System.Drawing.Point(281, 282);
+            this.EliminarButton.Location = new System.Drawing.Point(281, 276);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(89, 52);
             this.EliminarButton.TabIndex = 27;
@@ -211,7 +213,7 @@
             // 
             this.NuevoButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
-            this.NuevoButton.Location = new System.Drawing.Point(68, 282);
+            this.NuevoButton.Location = new System.Drawing.Point(68, 276);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(89, 52);
             this.NuevoButton.TabIndex = 26;
@@ -223,13 +225,30 @@
             // 
             this.GuardarButton.BackColor = System.Drawing.Color.White;
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
-            this.GuardarButton.Location = new System.Drawing.Point(174, 282);
+            this.GuardarButton.Location = new System.Drawing.Point(174, 276);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(89, 52);
             this.GuardarButton.TabIndex = 25;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.GuardarButton.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 43);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 13);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Tipo";
+            // 
+            // TipoComboBox
+            // 
+            this.TipoComboBox.FormattingEnabled = true;
+            this.TipoComboBox.Location = new System.Drawing.Point(93, 44);
+            this.TipoComboBox.Name = "TipoComboBox";
+            this.TipoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.TipoComboBox.TabIndex = 29;
             // 
             // rVehiculos
             // 
@@ -238,7 +257,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(504, 340);
+            this.ClientSize = new System.Drawing.Size(416, 334);
+            this.Controls.Add(this.TipoComboBox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
@@ -290,5 +311,7 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox TipoComboBox;
     }
 }

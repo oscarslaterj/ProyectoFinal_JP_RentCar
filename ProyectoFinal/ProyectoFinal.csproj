@@ -119,9 +119,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="UI\Consultas\" />
     <Folder Include="UI\Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1486504337-car-transportation-transport-travel-vehicle_81301.png" />
+    <Content Include="Resources\1486564399-close_81512.png" />
+    <Content Include="Resources\Cabriolet_Red_icon-icons.com_54906.png" />
+    <Content Include="Resources\customer_person_people_man_you_1625.png" />
+    <Content Include="Resources\delete_delete_deleteusers_delete_male_user_maleclient_2348.png" />
+    <Content Include="Resources\icons8-guardar-40.png" />
+    <Content Include="Resources\new_add_user_16734.png" />
+    <Content Include="Resources\New_File_36861.png" />
+    <Content Include="Resources\pkw.png" />
+    <Content Include="Resources\Save_icon-icons.com_73702.png" />
+    <Content Include="Resources\search_find_client_user_16693.png" />
+    <Content Include="Resources\usuario-hombre.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
