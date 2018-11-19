@@ -15,6 +15,7 @@ namespace ProyectoFinal.Entidades
         public String Nombre { get; set; }
         public String Cedula { get; set; }
         public String Direccion { get; set; }
+        public string Telefono { get; set; }
         public DateTime FechaNacimiento { get; set; }
 
         public Clientes()
@@ -23,6 +24,7 @@ namespace ProyectoFinal.Entidades
             Nombre = string.Empty;
             Cedula = string.Empty;
             Direccion = string.Empty;
+            Telefono = string.Empty;
             FechaNacimiento = DateTime.Now;
         }
 

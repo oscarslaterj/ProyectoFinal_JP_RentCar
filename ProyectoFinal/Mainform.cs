@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoFinal.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,16 @@ namespace ProyectoFinal
             InitializeComponent();
         }
 
-    
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rUsuarios r = new rUsuarios();
+            r.Show();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rClientes c = new rClientes();
+            c.Show();
+        }
     }
 }
