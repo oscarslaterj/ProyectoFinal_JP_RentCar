@@ -80,6 +80,18 @@
     <Compile Include="UI\Registros\rClientes.Designer.cs">
       <DependentUpon>rClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rMantenimiento.Designer.cs">
+      <DependentUpon>rMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rRenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rRenta.Designer.cs">
+      <DependentUpon>rRenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
