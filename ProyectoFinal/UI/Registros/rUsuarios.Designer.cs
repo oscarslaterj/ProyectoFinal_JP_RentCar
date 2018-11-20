@@ -235,6 +235,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "rUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "rUsuarios";
             ((System.ComponentModel.ISupportInitialize)(this.UserIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

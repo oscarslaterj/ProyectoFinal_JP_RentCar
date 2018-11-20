@@ -282,6 +282,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "rVehiculos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "rVehiculos";
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).EndInit();
             this.ResumeLayout(false);
