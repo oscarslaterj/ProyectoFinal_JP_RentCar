@@ -35,5 +35,10 @@ namespace ProyectoFinal
             rVehiculos v = new rVehiculos();
             v.Show();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

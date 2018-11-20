@@ -44,6 +44,8 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.UserIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 26);
+            this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
@@ -59,7 +61,7 @@
             // 
             // UserIdNumericUpDown
             // 
-            this.UserIdNumericUpDown.Location = new System.Drawing.Point(130, 24);
+            this.UserIdNumericUpDown.Location = new System.Drawing.Point(130, 12);
             this.UserIdNumericUpDown.Name = "UserIdNumericUpDown";
             this.UserIdNumericUpDown.Size = new System.Drawing.Size(78, 20);
             this.UserIdNumericUpDown.TabIndex = 1;
@@ -67,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 60);
+            this.label2.Location = new System.Drawing.Point(12, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 2;
@@ -75,14 +77,14 @@
             // 
             // NameUserTextBox
             // 
-            this.NameUserTextBox.Location = new System.Drawing.Point(130, 57);
+            this.NameUserTextBox.Location = new System.Drawing.Point(130, 77);
             this.NameUserTextBox.Name = "NameUserTextBox";
             this.NameUserTextBox.Size = new System.Drawing.Size(160, 20);
             this.NameUserTextBox.TabIndex = 3;
             // 
             // UserNameTextBox
             // 
-            this.UserNameTextBox.Location = new System.Drawing.Point(130, 90);
+            this.UserNameTextBox.Location = new System.Drawing.Point(130, 109);
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(160, 20);
             this.UserNameTextBox.TabIndex = 4;
@@ -90,7 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 93);
+            this.label3.Location = new System.Drawing.Point(12, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 5;
@@ -99,7 +101,7 @@
             // Contraseña
             // 
             this.Contraseña.AutoSize = true;
-            this.Contraseña.Location = new System.Drawing.Point(16, 128);
+            this.Contraseña.Location = new System.Drawing.Point(12, 147);
             this.Contraseña.Name = "Contraseña";
             this.Contraseña.Size = new System.Drawing.Size(61, 13);
             this.Contraseña.TabIndex = 6;
@@ -107,7 +109,7 @@
             // 
             // PasswordMaskedTextBox
             // 
-            this.PasswordMaskedTextBox.Location = new System.Drawing.Point(130, 123);
+            this.PasswordMaskedTextBox.Location = new System.Drawing.Point(130, 141);
             this.PasswordMaskedTextBox.Name = "PasswordMaskedTextBox";
             this.PasswordMaskedTextBox.PasswordChar = '*';
             this.PasswordMaskedTextBox.Size = new System.Drawing.Size(160, 20);
@@ -116,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 164);
+            this.label4.Location = new System.Drawing.Point(12, 179);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 13);
             this.label4.TabIndex = 8;
@@ -124,7 +126,7 @@
             // 
             // ConfirmPasswordMaskedTextBox
             // 
-            this.ConfirmPasswordMaskedTextBox.Location = new System.Drawing.Point(130, 156);
+            this.ConfirmPasswordMaskedTextBox.Location = new System.Drawing.Point(130, 173);
             this.ConfirmPasswordMaskedTextBox.Name = "ConfirmPasswordMaskedTextBox";
             this.ConfirmPasswordMaskedTextBox.PasswordChar = '*';
             this.ConfirmPasswordMaskedTextBox.Size = new System.Drawing.Size(160, 20);
@@ -181,13 +183,30 @@
             this.BuscarButton.BackColor = System.Drawing.Color.White;
             this.BuscarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(287, 12);
+            this.BuscarButton.Location = new System.Drawing.Point(285, 3);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(91, 35);
             this.BuscarButton.TabIndex = 21;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Nivel de Acceso";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(130, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(160, 21);
+            this.comboBox1.TabIndex = 23;
             // 
             // rUsuarios
             // 
@@ -197,6 +216,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(481, 301);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
@@ -239,5 +260,7 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace ProyectoFinal.Entidades
 {
    public class VehiculosDetalle
     {
+        [Key]
+
         public int VehiculoID { get; set; }
         public string Placa { get; set; }
         public string Tipo { get; set; }
