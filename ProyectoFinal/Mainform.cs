@@ -1,4 +1,5 @@
-﻿using ProyectoFinal.UI.Registros;
+﻿using ProyectoFinal.UI.Consultas;
+using ProyectoFinal.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,25 +21,67 @@ namespace ProyectoFinal
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuarios r = new rUsuarios();
-            r.Show();
+            rUsuarios registrousuarios = new rUsuarios();
+            registrousuarios.Show();
         }
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rClientes c = new rClientes();
-            c.Show();
+            rClientes registroclientes = new rClientes();
+            registroclientes.Show();
         }
 
         private void vehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rVehiculos v = new rVehiculos();
-            v.Show();
+            rVehiculos registrovehiculos = new rVehiculos();
+            registrovehiculos.Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void rentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rRenta registrorenta = new rRenta();
+            registrorenta.Show();
+        }
+
+        private void mantenimientoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            rMantenimiento registromantenimiento = new rMantenimiento();
+            registromantenimiento.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cUsuarios consultausuarios = new cUsuarios();
+            consultausuarios.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cClientes consultaclientes = new cClientes();
+            consultaclientes.Show();
+        }
+
+        private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cVehiculos consultavehiculos = new cVehiculos();
+            consultavehiculos.Show();
+        }
+
+        private void rentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cRenta consultarenta = new cRenta();
+            consultarenta.Show();
+        }
+
+        private void mantenimientoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            cMantenimiento  consultamantenimiento = new cMantenimiento();
+            consultamantenimiento.Show();
         }
     }
 }
