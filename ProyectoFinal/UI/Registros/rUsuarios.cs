@@ -74,6 +74,10 @@ namespace ProyectoFinal.UI.Registros
                     {
                         ErrorProvider.SetError(ConfirmPasswordMaskedTextBox, "Debe introducir la Contraseña de confirmacion");
                     }
+                    if (string.IsNullOrEmpty(NameUserTextBox.Text))
+                    {
+                        ErrorProvider.SetError(NameUserTextBox, "Debe introducir el nombre de la persona");
+                    }
                 }
                 paso = false;
             }
@@ -87,37 +91,34 @@ namespace ProyectoFinal.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Usuarios>();
-            Usuarios usuarios;
             bool paso = false;
-
-            usuarios = Llenaclase();
-            if (PasswordMaskedTextBox.Text == ConfirmPasswordMaskedTextBox.Text)
+            Usuarios usuario;
+            if (!Validar())
+                return;
+            usuario = new Usuarios();
+            usuario = Llenaclase();
+            if (UserIdNumericUpDown.Value == 0)
             {
-                if (!Validar())
+
+                paso = repositorio.Guardar(usuario);
+            }
+            else
+            {
+                if (!ExiteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("Debe llenar los Campos vacios");
-                }
-                else
-                if (UserIdNumericUpDown.Value >= 0)
-                    paso = repositorio.Guardar(usuarios);
-                else
-                {
-                    if (!ExiteEnLaBaseDeDatos())
-                        MessageBox.Show("No Exite No es Modificable", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No Se Puede Modificar No Exite", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = repositorio.Modificar(usuarios);
-
-                if (paso)
-                {
-                    MessageBox.Show("Guardado con Exito", "Guardo!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("No Guardo ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                paso = repositorio.Modificar(usuario);
+            }
+            if (paso)
+            {
+                MessageBox.Show("Guardado con Exito", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("No Se Puede Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -136,6 +137,28 @@ namespace ProyectoFinal.UI.Registros
             }
             else
                 MessageBox.Show("Usuario No Existe");
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            int id;
+            repositorio = new RepositorioBase<Usuarios>();
+            int.TryParse(UserIdNumericUpDown.Text, out id);
+            if (!ExiteEnLaBaseDeDatos())
+            {
+                ErrorProvider.SetError(UserIdNumericUpDown, "No Exite en la Base de Datos");
+                UserIdNumericUpDown.Focus();
+                return;
+            }
+            if (repositorio.Eliminar(id))
+            {
+                MessageBox.Show("Eliminado");
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("No se Eliminó");
+            }
         }
     }
     }
