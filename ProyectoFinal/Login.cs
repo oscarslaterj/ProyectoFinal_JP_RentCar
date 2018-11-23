@@ -66,7 +66,7 @@ namespace ProyectoFinal
             else
             {
                 filtrar = t => t.NombreUser.Equals(UsuarioTextBox.Text);
-                user = UsuariosBLL.GetList(filtrar);
+               // user = IRepository.GetList(filtrar);
 
                 if (user.Exists(x => x.NombreUser == UsuarioTextBox.Text) && user.Exists(x => x.Clave == ContrasenaTextBox.Text))
                 {
@@ -84,5 +84,7 @@ namespace ProyectoFinal
             }
             ContrasenaTextBox.MaxLength = 14;
         }
+
+     
     }
 }

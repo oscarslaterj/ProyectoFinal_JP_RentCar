@@ -15,6 +15,7 @@ namespace ProyectoFinal.Entidades
         public string Nombre { get; set; }
         public string NombreUser { get; set; }
         public string Clave { get; set; }
+        public string ConfirmClave { get; set; }
         public DateTime Fecha { get; set; }
  
 
