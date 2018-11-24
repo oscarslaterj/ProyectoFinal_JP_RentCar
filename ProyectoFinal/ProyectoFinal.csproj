@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
+    <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Clientes.cs" />
     <Compile Include="Entidades\Usuarios.cs" />

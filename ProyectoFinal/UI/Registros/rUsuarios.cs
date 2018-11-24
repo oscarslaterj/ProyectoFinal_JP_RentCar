@@ -14,14 +14,14 @@ namespace ProyectoFinal.UI.Registros
 {
     public partial class rUsuarios : Form
     {
-        private RepositorioBase<Usuarios> repositorio;
+
         public rUsuarios()
         {
             InitializeComponent();
         }
 
         public void LlenarCampos(Usuarios usuarios)
-        { 
+        {
             usuarios.Nombre = NameUserTextBox.Text;
             usuarios.NombreUser = UserNameTextBox.Text;
             usuarios.Clave = PasswordMaskedTextBox.Text;
@@ -37,15 +37,19 @@ namespace ProyectoFinal.UI.Registros
             UserNameTextBox.Clear();
             PasswordMaskedTextBox.Clear();
             ConfirmPasswordMaskedTextBox.Clear();
+            NivelAccesoComboBox.SelectedItem = null;
+
+
+            ErrorProvider.Clear();
 
         }
 
-        private bool ExiteEnLaBaseDeDatos()
+       /* private bool ExiteEnLaBaseDeDatos()
         {
             repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuarios = repositorio.Buscar((int)UserIdNumericUpDown.Value);
             return (usuarios != null);
-        }
+        }*/
 
 
         public Usuarios Llenaclase()
@@ -61,103 +65,185 @@ namespace ProyectoFinal.UI.Registros
             return usuarios;
         }
 
-        private bool Validar()
+        private bool Validar(int error)
         {
-            bool paso = true;
-            if (string.IsNullOrEmpty(UserNameTextBox.Text))
+            bool errores = false;
+            int num = 0;
+            if (error == 1 && UserIdNumericUpDown.Value == 0)
             {
-                ErrorProvider.SetError(UserNameTextBox, "Debe introducir el Nombre del Usuario");
-                if (string.IsNullOrEmpty(PasswordMaskedTextBox.Text))
-                {
-                    ErrorProvider.SetError(PasswordMaskedTextBox, "Debe introducir la Contraseña");
-                    if (string.IsNullOrEmpty(ConfirmPasswordMaskedTextBox.Text))
-                    {
-                        ErrorProvider.SetError(ConfirmPasswordMaskedTextBox, "Debe introducir la Contraseña de confirmacion");
-                    }
-                    if (string.IsNullOrEmpty(NameUserTextBox.Text))
-                    {
-                        ErrorProvider.SetError(NameUserTextBox, "Debe introducir el nombre de la persona");
-                    }
-                }
-                paso = false;
+                ErrorProvider.SetError(UserIdNumericUpDown, "Llenar Usuario Id");
+                errores = true;
             }
-            return paso;
+
+            if (error == 2 && string.IsNullOrWhiteSpace(NameUserTextBox.Text))
+            {
+
+                ErrorProvider.SetError(NameUserTextBox, "Llene Nombre");
+                errores = true;
+            }
+
+            if (error == 2 && string.IsNullOrWhiteSpace(UserNameTextBox.Text))
+            {
+
+                ErrorProvider.SetError(UserNameTextBox, "Llene Usuario");
+                errores = true;
+            }
+
+            if (error == 2 && string.IsNullOrWhiteSpace(PasswordMaskedTextBox.Text))
+            {
+
+                ErrorProvider.SetError(PasswordMaskedTextBox, "Llene contraseña");
+                errores = true;
+            }
+
+            if (error == 2 && string.IsNullOrWhiteSpace(ConfirmPasswordMaskedTextBox.Text))
+            {
+
+                ErrorProvider.SetError(ConfirmPasswordMaskedTextBox, "Llene contraseña");
+                errores = true;
+            }
+
+          /*  if (error == 2 && string.IsNullOrEmpty(NivelAccesoComboBox.Text))
+            {
+
+                ErrorProvider.SetError(NivelAccesoComboBox, "Llene Tipo de Usuario");
+                errores = true;
+            }*/
+            if (error == 3 && int.TryParse(NameUserTextBox.Text, out num) == true)
+            {
+
+                ErrorProvider.SetError(NameUserTextBox, "Debe Digitar Caracteres");
+                errores = true;
+            }
+
+            if (error == 4 && PasswordMaskedTextBox.Text != ConfirmPasswordMaskedTextBox.Text)
+            {
+
+                ErrorProvider.SetError(ConfirmPasswordMaskedTextBox, "Llenar Confirmar Contraseña");
+                errores = true;
+            }
+
+            return errores;
         }
+
+
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
+
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-            Usuarios usuario;
-            if (!Validar())
+            Usuarios usuarios = Llenaclase();
+            int id = Convert.ToInt32(UserIdNumericUpDown.Value);
+
+
+            if (Validar(3))
+            {
+                MessageBox.Show("Favor Dijite un Nombre", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            usuario = new Usuarios();
-            usuario = Llenaclase();
-            if (UserIdNumericUpDown.Value == 0)
+            }
+            if (Validar(4))
             {
+                MessageBox.Show("La Contraseña no son Iguales", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PasswordMaskedTextBox.Clear();
+                ConfirmPasswordMaskedTextBox.Clear();
+                return;
+            }
 
-                paso = repositorio.Guardar(usuario);
+            if (Validar(2))
+            {
+                MessageBox.Show("Favor de Llenar las Casillas", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (!ExiteEnLaBaseDeDatos())
+                if (UserIdNumericUpDown.Value == 0)
                 {
-                    MessageBox.Show("No Se Puede Modificar No Exite", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    paso = BLL.UsuariosBLL.Guardar(usuarios);
                 }
-                paso = repositorio.Modificar(usuario);
-            }
-            if (paso)
-            {
-                MessageBox.Show("Guardado con Exito", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+
+                    var usuario = BLL.UsuariosBLL.Buscar(id);
+
+                    if (usuario != null)
+                    {
+                        paso = BLL.UsuariosBLL.Editar(usuarios);
+                    }
+                    else
+                        MessageBox.Show("Id no existe", "Falló",
+                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 Limpiar();
-            }
-            else
-            {
-                MessageBox.Show("No Se Puede Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ErrorProvider.Clear();
+                if (paso)
+                {
+                    MessageBox.Show("Guardado!", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No pudo Guardar!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
+
+
+
+            private void BuscarButton_Click(object sender, EventArgs e)
         {
-            int id;
-            repositorio = new RepositorioBase<Usuarios>();
-            Usuarios usuarios = new Usuarios();
-            int.TryParse(UserIdNumericUpDown.Text, out id);
-            usuarios = repositorio.Buscar(id);
-
-            if (usuarios != null)
+            if (Validar(1))
             {
-                MessageBox.Show("Usuario Encotrado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LlenarCampos(usuarios);
+                MessageBox.Show("Favor de Llenar Casilla para poder Buscar", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                MessageBox.Show("Usuario No Existe");
+            {
+                int id = Convert.ToInt32(UserIdNumericUpDown.Value);
+                Usuarios usuarios = BLL.UsuariosBLL.Buscar(id);
+
+                if (usuarios != null)
+                {
+                    UserIdNumericUpDown.Value = usuarios.UsuarioId;
+                    NameUserTextBox.Text = usuarios.Nombre;
+                    UserNameTextBox.Text = usuarios.NombreUser;
+                    PasswordMaskedTextBox.Text = usuarios.Clave;
+                    NivelAccesoComboBox.Text = usuarios.NivelAcceso;
+
+                }
+                else
+                {
+                    MessageBox.Show("No Fue Encontrado!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                ErrorProvider.Clear();
+            }
         }
+
+
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            int id;
-            repositorio = new RepositorioBase<Usuarios>();
-            int.TryParse(UserIdNumericUpDown.Text, out id);
-            if (!ExiteEnLaBaseDeDatos())
+            if (Validar(1))
             {
-                ErrorProvider.SetError(UserIdNumericUpDown, "No Exite en la Base de Datos");
-                UserIdNumericUpDown.Focus();
-                return;
-            }
-            if (repositorio.Eliminar(id))
-            {
-                MessageBox.Show("Eliminado");
-                Limpiar();
+                MessageBox.Show("Favor de Llenar casilla para poder Eliminar", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("No se Eliminó");
+                int id = Convert.ToInt32(UserIdNumericUpDown.Value);
+
+                if (BLL.UsuariosBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado!", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No Pudo Eliminar!", "Fallido!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                ErrorProvider.Clear();
             }
         }
     }
