@@ -14,7 +14,7 @@ namespace ProyectoFinal.BLL
         internal Contexto _contexto;
 
 
-        public RepositorioBase()
+        public RepositorioBase(Contexto contexto)
         {
             _contexto = new Contexto();
         }

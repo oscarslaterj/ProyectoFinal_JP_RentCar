@@ -12,6 +12,7 @@ namespace ProyectoFinal.DAL
     {
         public DbSet<Clientes> Clientes{ get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Vehiculos> Vehiculos { get; set; }
 
         public Contexto() : base("Constr") { }
     }

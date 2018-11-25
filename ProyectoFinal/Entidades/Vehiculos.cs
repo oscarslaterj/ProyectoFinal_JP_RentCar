@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Entidades
 {
-   public class VehiculosDetalle
+   public class Vehiculos
     {
         [Key]
 
@@ -22,7 +22,7 @@ namespace ProyectoFinal.Entidades
         public DateTime FechaRegistro { get; set; }
 
 
-        public VehiculosDetalle()
+        public Vehiculos()
         {
             VehiculoID = 0;
             Placa = string.Empty;

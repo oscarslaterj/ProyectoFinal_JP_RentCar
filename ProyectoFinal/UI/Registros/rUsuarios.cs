@@ -47,9 +47,9 @@ namespace ProyectoFinal.UI.Registros
 
         private bool ExiteEnLaBaseDeDatos()
         {
-            repositorio = new RepositorioBase<Usuarios>();
-            Usuarios usuarios = repositorio.Buscar((int)UserIdNumericUpDown.Value);
-            return (usuarios != null);
+            repositorio = new RepositorioBase<Usuarios>(new DAL.Contexto());
+            Usuarios usuario = repositorio.Buscar((int)UserIdNumericUpDown.Value);
+            return (usuario != null);
         }
 
 
