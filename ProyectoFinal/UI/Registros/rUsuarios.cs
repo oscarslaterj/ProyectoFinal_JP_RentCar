@@ -12,9 +12,10 @@ using System.Windows.Forms;
 
 namespace ProyectoFinal.UI.Registros
 {
+
     public partial class rUsuarios : Form
     {
-
+        RepositorioBase<Usuarios> repositorio;
         public rUsuarios()
         {
             InitializeComponent();
@@ -44,12 +45,12 @@ namespace ProyectoFinal.UI.Registros
 
         }
 
-       /* private bool ExiteEnLaBaseDeDatos()
+        private bool ExiteEnLaBaseDeDatos()
         {
             repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuarios = repositorio.Buscar((int)UserIdNumericUpDown.Value);
             return (usuarios != null);
-        }*/
+        }
 
 
         public Usuarios Llenaclase()
@@ -65,65 +66,38 @@ namespace ProyectoFinal.UI.Registros
             return usuarios;
         }
 
-        private bool Validar(int error)
+        private bool Validar()
         {
-            bool errores = false;
-            int num = 0;
-            if (error == 1 && UserIdNumericUpDown.Value == 0)
+
+            bool paso = true;
+            if (string.IsNullOrWhiteSpace(UserNameTextBox.Text))
             {
-                ErrorProvider.SetError(UserIdNumericUpDown, "Llenar Usuario Id");
-                errores = true;
+                ErrorProvider.SetError(UserNameTextBox, "Campo Vacio ");
+                paso = false;
+            }
+            if (string.IsNullOrWhiteSpace(PasswordMaskedTextBox.Text))
+            {
+                ErrorProvider.SetError(PasswordMaskedTextBox, "Campo Vacio ");
+                paso = false;
+            }
+            if (string.IsNullOrWhiteSpace(NameUserTextBox.Text))
+            {
+                ErrorProvider.SetError(NameUserTextBox, "Campo Vacio");
+                paso = false;
+            }
+            if (string.IsNullOrWhiteSpace(ConfirmPasswordMaskedTextBox.Text))
+            {
+                ErrorProvider.SetError(ConfirmPasswordMaskedTextBox, "Campo Vacio");
+                paso = false;
+            }
+            if (string.IsNullOrWhiteSpace(NivelAccesoComboBox.Text))
+            {
+                ErrorProvider.SetError(NivelAccesoComboBox, "Campo Vacio");
+                paso = false;
             }
 
-            if (error == 2 && string.IsNullOrWhiteSpace(NameUserTextBox.Text))
-            {
 
-                ErrorProvider.SetError(NameUserTextBox, "Llene Nombre");
-                errores = true;
-            }
-
-            if (error == 2 && string.IsNullOrWhiteSpace(UserNameTextBox.Text))
-            {
-
-                ErrorProvider.SetError(UserNameTextBox, "Llene Usuario");
-                errores = true;
-            }
-
-            if (error == 2 && string.IsNullOrWhiteSpace(PasswordMaskedTextBox.Text))
-            {
-
-                ErrorProvider.SetError(PasswordMaskedTextBox, "Llene contraseña");
-                errores = true;
-            }
-
-            if (error == 2 && string.IsNullOrWhiteSpace(ConfirmPasswordMaskedTextBox.Text))
-            {
-
-                ErrorProvider.SetError(ConfirmPasswordMaskedTextBox, "Llene contraseña");
-                errores = true;
-            }
-
-          /*  if (error == 2 && string.IsNullOrEmpty(NivelAccesoComboBox.Text))
-            {
-
-                ErrorProvider.SetError(NivelAccesoComboBox, "Llene Tipo de Usuario");
-                errores = true;
-            }*/
-            if (error == 3 && int.TryParse(NameUserTextBox.Text, out num) == true)
-            {
-
-                ErrorProvider.SetError(NameUserTextBox, "Debe Digitar Caracteres");
-                errores = true;
-            }
-
-            if (error == 4 && PasswordMaskedTextBox.Text != ConfirmPasswordMaskedTextBox.Text)
-            {
-
-                ErrorProvider.SetError(ConfirmPasswordMaskedTextBox, "Llenar Confirmar Contraseña");
-                errores = true;
-            }
-
-            return errores;
+            return paso;
         }
 
 
@@ -136,117 +110,84 @@ namespace ProyectoFinal.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
+            repositorio = new RepositorioBase<Usuarios>(new DAL.Contexto());
             bool paso = false;
-            Usuarios usuarios = Llenaclase();
-            int id = Convert.ToInt32(UserIdNumericUpDown.Value);
-
-
-            if (Validar(3))
-            {
-                MessageBox.Show("Favor Dijite un Nombre", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Usuarios usuario;
+            if (!Validar())
                 return;
-            }
-            if (Validar(4))
+            usuario = new Usuarios();
+            usuario = Llenaclase();
+            if (UserIdNumericUpDown.Value == 0)
             {
-                MessageBox.Show("La Contraseña no son Iguales", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PasswordMaskedTextBox.Clear();
-                ConfirmPasswordMaskedTextBox.Clear();
-                return;
-            }
 
-            if (Validar(2))
-            {
-                MessageBox.Show("Favor de Llenar las Casillas", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                paso = repositorio.Guardar(usuario);
             }
             else
             {
-                if (UserIdNumericUpDown.Value == 0)
+                if (!ExiteEnLaBaseDeDatos())
                 {
-                    paso = BLL.UsuariosBLL.Guardar(usuarios);
+                    MessageBox.Show("No Se Puede Modificar No Exite", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                else
-                {
-
-                    var usuario = BLL.UsuariosBLL.Buscar(id);
-
-                    if (usuario != null)
-                    {
-                        paso = BLL.UsuariosBLL.Editar(usuarios);
-                    }
-                    else
-                        MessageBox.Show("Id no existe", "Falló",
-                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
+                paso = repositorio.Modificar(usuario);
+            }
+            if (paso)
+            {
+                MessageBox.Show("Guardado con Exito", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Limpiar();
-                ErrorProvider.Clear();
-                if (paso)
-                {
-                    MessageBox.Show("Guardado!", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No pudo Guardar!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                MessageBox.Show("No Se Puede Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
 
 
 
-            private void BuscarButton_Click(object sender, EventArgs e)
+        private void BuscarButton_Click(object sender, EventArgs e)
         {
-            if (Validar(1))
+            repositorio = new RepositorioBase<Usuarios>(new DAL.Contexto());
+            int id;
+            Usuarios usuario = new Usuarios();
+
+            int.TryParse(UserIdNumericUpDown.Text, out id);
+            usuario = repositorio.Buscar(id);
+
+            if (usuario != null)
             {
-                MessageBox.Show("Favor de Llenar Casilla para poder Buscar", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario Econtrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LlenarCampos(usuario);
             }
             else
             {
-                int id = Convert.ToInt32(UserIdNumericUpDown.Value);
-                Usuarios usuarios = BLL.UsuariosBLL.Buscar(id);
-
-                if (usuarios != null)
-                {
-                    UserIdNumericUpDown.Value = usuarios.UsuarioId;
-                    NameUserTextBox.Text = usuarios.Nombre;
-                    UserNameTextBox.Text = usuarios.NombreUser;
-                    PasswordMaskedTextBox.Text = usuarios.Clave;
-                    NivelAccesoComboBox.Text = usuarios.NivelAcceso;
-
-                }
-                else
-                {
-                    MessageBox.Show("No Fue Encontrado!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                ErrorProvider.Clear();
+                MessageBox.Show("Usuario no Exite", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
 
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            if (Validar(1))
+            repositorio = new RepositorioBase<Usuarios>(new DAL.Contexto());
+            int id;
+            int.TryParse(UserIdNumericUpDown.Text, out id);
+            if (!ExiteEnLaBaseDeDatos())
             {
-                MessageBox.Show("Favor de Llenar casilla para poder Eliminar", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorProvider.SetError(UserIdNumericUpDown, "Este Usuario No Exite");
+                UserIdNumericUpDown.Focus();
+                return;
+            }
+            if (repositorio.Eliminar(id))
+            {
+                MessageBox.Show("Usuario Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
             }
             else
-            {
-                int id = Convert.ToInt32(UserIdNumericUpDown.Value);
-
-                if (BLL.UsuariosBLL.Eliminar(id))
-                {
-                    MessageBox.Show("Eliminado!", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("No Pudo Eliminar!", "Fallido!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                ErrorProvider.Clear();
-            }
+                MessageBox.Show("No se Pudo Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
-    }
+}
 
 

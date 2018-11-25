@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rClientes));
             this.label1 = new System.Windows.Forms.Label();
             this.NombresTextBox = new System.Windows.Forms.TextBox();
@@ -38,7 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.FechaNacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.ClienteIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.EliminarButton = new System.Windows.Forms.Button();
@@ -48,14 +49,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.FechaRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SexoComboBox = new System.Windows.Forms.ComboBox();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 40);
+            this.label1.Location = new System.Drawing.Point(22, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
@@ -63,7 +68,7 @@
             // 
             // NombresTextBox
             // 
-            this.NombresTextBox.Location = new System.Drawing.Point(107, 37);
+            this.NombresTextBox.Location = new System.Drawing.Point(107, 39);
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(214, 20);
             this.NombresTextBox.TabIndex = 1;
@@ -71,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 70);
+            this.label2.Location = new System.Drawing.Point(22, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 2;
@@ -79,7 +84,7 @@
             // 
             // DireccionTextBox
             // 
-            this.DireccionTextBox.Location = new System.Drawing.Point(107, 66);
+            this.DireccionTextBox.Location = new System.Drawing.Point(107, 104);
             this.DireccionTextBox.Name = "DireccionTextBox";
             this.DireccionTextBox.Size = new System.Drawing.Size(214, 20);
             this.DireccionTextBox.TabIndex = 3;
@@ -87,7 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 160);
+            this.label3.Location = new System.Drawing.Point(22, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 4;
@@ -95,7 +100,7 @@
             // 
             // TelefonoMaskedTextBox
             // 
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(107, 153);
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(107, 200);
             this.TelefonoMaskedTextBox.Mask = "(999) - 999 - 9999";
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
             this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(118, 20);
@@ -104,7 +109,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 130);
+            this.label4.Location = new System.Drawing.Point(22, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 6;
@@ -114,7 +119,7 @@
             // 
             this.FechaNacimientoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaNacimientoDateTimePicker.Location = new System.Drawing.Point(107, 124);
+            this.FechaNacimientoDateTimePicker.Location = new System.Drawing.Point(107, 168);
             this.FechaNacimientoDateTimePicker.Name = "FechaNacimientoDateTimePicker";
             this.FechaNacimientoDateTimePicker.Size = new System.Drawing.Size(118, 20);
             this.FechaNacimientoDateTimePicker.TabIndex = 7;
@@ -122,19 +127,19 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 100);
+            this.label5.Location = new System.Drawing.Point(22, 133);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Cédula";
             // 
-            // maskedTextBox1
+            // CedulaMaskedTextBox
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(107, 95);
-            this.maskedTextBox1.Mask = "999-9999999-9";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(118, 20);
-            this.maskedTextBox1.TabIndex = 9;
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(107, 136);
+            this.CedulaMaskedTextBox.Mask = "999-9999999-9";
+            this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
+            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(118, 20);
+            this.CedulaMaskedTextBox.TabIndex = 9;
             // 
             // label6
             // 
@@ -156,7 +161,7 @@
             // 
             this.EliminarButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
-            this.EliminarButton.Location = new System.Drawing.Point(282, 219);
+            this.EliminarButton.Location = new System.Drawing.Point(285, 265);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(89, 52);
             this.EliminarButton.TabIndex = 16;
@@ -168,7 +173,7 @@
             // 
             this.NuevoButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
-            this.NuevoButton.Location = new System.Drawing.Point(69, 219);
+            this.NuevoButton.Location = new System.Drawing.Point(72, 265);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(89, 52);
             this.NuevoButton.TabIndex = 15;
@@ -180,7 +185,7 @@
             // 
             this.GuardarButton.BackColor = System.Drawing.Color.White;
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
-            this.GuardarButton.Location = new System.Drawing.Point(175, 219);
+            this.GuardarButton.Location = new System.Drawing.Point(178, 265);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(89, 52);
             this.GuardarButton.TabIndex = 14;
@@ -192,7 +197,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(427, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(468, 7);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(84, 62);
             this.pictureBox1.TabIndex = 17;
@@ -201,7 +206,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 190);
+            this.label7.Location = new System.Drawing.Point(22, 232);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 18;
@@ -211,7 +216,7 @@
             // 
             this.FechaRegistroDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaRegistroDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(107, 184);
+            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(107, 232);
             this.FechaRegistroDateTimePicker.Name = "FechaRegistroDateTimePicker";
             this.FechaRegistroDateTimePicker.Size = new System.Drawing.Size(118, 20);
             this.FechaRegistroDateTimePicker.TabIndex = 19;
@@ -221,13 +226,35 @@
             this.BuscarButton.BackColor = System.Drawing.Color.White;
             this.BuscarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(330, 7);
+            this.BuscarButton.Location = new System.Drawing.Point(337, 7);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(91, 35);
             this.BuscarButton.TabIndex = 20;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = false;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Sexo";
+            // 
+            // SexoComboBox
+            // 
+            this.SexoComboBox.FormattingEnabled = true;
+            this.SexoComboBox.Location = new System.Drawing.Point(107, 71);
+            this.SexoComboBox.Name = "SexoComboBox";
+            this.SexoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.SexoComboBox.TabIndex = 22;
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
             // 
             // rClientes
             // 
@@ -236,7 +263,9 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(523, 273);
+            this.ClientSize = new System.Drawing.Size(564, 329);
+            this.Controls.Add(this.SexoComboBox);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.FechaRegistroDateTimePicker);
             this.Controls.Add(this.label7);
@@ -246,7 +275,7 @@
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.ClienteIdNumericUpDown);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.FechaNacimientoDateTimePicker);
             this.Controls.Add(this.label4);
@@ -262,6 +291,7 @@
             this.Text = "rClientes";
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,7 +308,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker FechaNacimientoDateTimePicker;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox CedulaMaskedTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown ClienteIdNumericUpDown;
         private System.Windows.Forms.Button EliminarButton;
@@ -288,5 +318,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker FechaRegistroDateTimePicker;
         private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox SexoComboBox;
+        private System.Windows.Forms.ErrorProvider ErrorProvider;
     }
 }

@@ -22,8 +22,14 @@ namespace ProyectoFinal.Entidades
 
         public Usuarios()
         {
-
+            UsuarioId = 0;
+            Nombre = string.Empty;
+            NombreUser = string.Empty;
+            Clave = string.Empty;
+            NivelAcceso = string.Empty;
+            Fecha = DateTime.Now;
         }
+       
     }
 }
 
