@@ -18,7 +18,7 @@ namespace ProyectoFinal.Entidades
         public string Modelo { get; set; }
         public string Anio { get; set; }
         public string Descripcion { get; set; }
-        public float PrecioRenta { get; set; }
+        public decimal PrecioRenta { get; set; }
         public DateTime FechaRegistro { get; set; }
 
 

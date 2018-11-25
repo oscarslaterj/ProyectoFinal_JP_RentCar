@@ -28,20 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.VehiculosDataGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.VehiculosDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // VehiculosDataGridView
+            // 
+            this.VehiculosDataGridView.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.VehiculosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VehiculosDataGridView.Location = new System.Drawing.Point(12, 119);
+            this.VehiculosDataGridView.Name = "VehiculosDataGridView";
+            this.VehiculosDataGridView.Size = new System.Drawing.Size(865, 245);
+            this.VehiculosDataGridView.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Vehiculos Disponibles";
             // 
             // rRenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(901, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.VehiculosDataGridView);
             this.Name = "rRenta";
             this.Text = "rRenta";
+            ((System.ComponentModel.ISupportInitialize)(this.VehiculosDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView VehiculosDataGridView;
+        private System.Windows.Forms.Label label1;
     }
 }
