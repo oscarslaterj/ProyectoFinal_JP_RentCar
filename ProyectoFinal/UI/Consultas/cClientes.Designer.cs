@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cClientes));
             this.label1 = new System.Windows.Forms.Label();
-            this.FailtroComboBox = new System.Windows.Forms.ComboBox();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -52,13 +52,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtro";
             // 
-            // FailtroComboBox
+            // FiltroComboBox
             // 
-            this.FailtroComboBox.FormattingEnabled = true;
-            this.FailtroComboBox.Location = new System.Drawing.Point(11, 76);
-            this.FailtroComboBox.Name = "FailtroComboBox";
-            this.FailtroComboBox.Size = new System.Drawing.Size(235, 21);
-            this.FailtroComboBox.TabIndex = 1;
+            this.FiltroComboBox.FormattingEnabled = true;
+            this.FiltroComboBox.Location = new System.Drawing.Point(11, 76);
+            this.FiltroComboBox.Name = "FiltroComboBox";
+            this.FiltroComboBox.Size = new System.Drawing.Size(235, 21);
+            this.FiltroComboBox.TabIndex = 1;
             // 
             // label2
             // 
@@ -108,6 +108,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = false;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // ConsultaDataGridView
             // 
@@ -161,7 +162,7 @@
             this.Controls.Add(this.DesdeDateTimePicker);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.FailtroComboBox);
+            this.Controls.Add(this.FiltroComboBox);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "cClientes";
@@ -175,7 +176,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox FailtroComboBox;
+        private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
