@@ -21,7 +21,6 @@ namespace ProyectoFinal.Entidades
         public decimal PrecioRenta { get; set; }
         public DateTime FechaRegistro { get; set; }
 
-
         public VehiculosDetalle()
         {
             VehiculoID = 0;

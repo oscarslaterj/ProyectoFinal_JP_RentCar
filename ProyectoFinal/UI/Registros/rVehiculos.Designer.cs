@@ -254,7 +254,6 @@
             this.TipoComboBox.Name = "TipoComboBox";
             this.TipoComboBox.Size = new System.Drawing.Size(121, 21);
             this.TipoComboBox.TabIndex = 29;
-           
             // 
             // PrecioNumericUpDown
             // 
@@ -298,6 +297,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "rVehiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "rVehiculos";

@@ -250,24 +250,7 @@ namespace ProyectoFinal.UI.Registros
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8))
                 e.Handled = false;
             else
-                e.Handled = true;
-
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+                e.Handled = true;   
 
         }
 
@@ -293,7 +276,11 @@ namespace ProyectoFinal.UI.Registros
             TipoComboBox.Items.Add("Sedan");
             TipoComboBox.Items.Add("Deportivo");
             TipoComboBox.Items.Add("Coupe");
+            TipoComboBox.Items.Add("Familiar");
+            TipoComboBox.Items.Add("TodoTerreno");
+
         }
+
        
     }
     }

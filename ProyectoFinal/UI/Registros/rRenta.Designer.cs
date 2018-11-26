@@ -37,8 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.FechaRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.FerchaDevueltaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.EliminarButton = new System.Windows.Forms.Button();
+            this.FechaDevueltaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.EliminarDetalleButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             this.RentarButton = new System.Windows.Forms.Button();
@@ -57,11 +57,14 @@
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.PrecioNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DateTimePickerF = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.AnioTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentaIDnumericUpDown)).BeginInit();
@@ -99,6 +102,7 @@
             // 
             // FiltroVehiculoComboBox
             // 
+            this.FiltroVehiculoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltroVehiculoComboBox.FormattingEnabled = true;
             this.FiltroVehiculoComboBox.Location = new System.Drawing.Point(99, 30);
             this.FiltroVehiculoComboBox.Name = "FiltroVehiculoComboBox";
@@ -132,25 +136,25 @@
             this.FechaRegistroDateTimePicker.Size = new System.Drawing.Size(137, 20);
             this.FechaRegistroDateTimePicker.TabIndex = 26;
             // 
-            // FerchaDevueltaDateTimePicker
+            // FechaDevueltaDateTimePicker
             // 
-            this.FerchaDevueltaDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FerchaDevueltaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FerchaDevueltaDateTimePicker.Location = new System.Drawing.Point(99, 130);
-            this.FerchaDevueltaDateTimePicker.Name = "FerchaDevueltaDateTimePicker";
-            this.FerchaDevueltaDateTimePicker.Size = new System.Drawing.Size(137, 20);
-            this.FerchaDevueltaDateTimePicker.TabIndex = 27;
+            this.FechaDevueltaDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaDevueltaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaDevueltaDateTimePicker.Location = new System.Drawing.Point(99, 130);
+            this.FechaDevueltaDateTimePicker.Name = "FechaDevueltaDateTimePicker";
+            this.FechaDevueltaDateTimePicker.Size = new System.Drawing.Size(137, 20);
+            this.FechaDevueltaDateTimePicker.TabIndex = 27;
             // 
-            // EliminarButton
+            // EliminarDetalleButton
             // 
-            this.EliminarButton.BackColor = System.Drawing.Color.Red;
-            this.EliminarButton.Location = new System.Drawing.Point(760, 475);
-            this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(117, 23);
-            this.EliminarButton.TabIndex = 29;
-            this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.UseVisualStyleBackColor = false;
-            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            this.EliminarDetalleButton.BackColor = System.Drawing.Color.Red;
+            this.EliminarDetalleButton.Location = new System.Drawing.Point(760, 475);
+            this.EliminarDetalleButton.Name = "EliminarDetalleButton";
+            this.EliminarDetalleButton.Size = new System.Drawing.Size(117, 23);
+            this.EliminarDetalleButton.TabIndex = 29;
+            this.EliminarDetalleButton.Text = "Eliminar";
+            this.EliminarDetalleButton.UseVisualStyleBackColor = false;
+            this.EliminarDetalleButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // label4
             // 
@@ -163,11 +167,13 @@
             // 
             // ClientecomboBox
             // 
+            this.ClientecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClientecomboBox.FormattingEnabled = true;
             this.ClientecomboBox.Location = new System.Drawing.Point(99, 66);
             this.ClientecomboBox.Name = "ClientecomboBox";
             this.ClientecomboBox.Size = new System.Drawing.Size(269, 21);
             this.ClientecomboBox.TabIndex = 31;
+            this.ClientecomboBox.SelectedValueChanged += new System.EventHandler(this.ClientecomboBox_SelectedValueChanged);
             // 
             // RentarButton
             // 
@@ -181,6 +187,7 @@
             this.RentarButton.Text = "Rentar";
             this.RentarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.RentarButton.UseVisualStyleBackColor = false;
+            this.RentarButton.Click += new System.EventHandler(this.RentarButton_Click);
             // 
             // AgregarDetalleButton
             // 
@@ -230,6 +237,7 @@
             // 
             // PlacaTextBox
             // 
+            this.PlacaTextBox.Enabled = false;
             this.PlacaTextBox.Location = new System.Drawing.Point(499, 88);
             this.PlacaTextBox.Name = "PlacaTextBox";
             this.PlacaTextBox.Size = new System.Drawing.Size(119, 20);
@@ -237,6 +245,7 @@
             // 
             // MarcaTextBox
             // 
+            this.MarcaTextBox.Enabled = false;
             this.MarcaTextBox.Location = new System.Drawing.Point(499, 30);
             this.MarcaTextBox.Name = "MarcaTextBox";
             this.MarcaTextBox.Size = new System.Drawing.Size(182, 20);
@@ -244,6 +253,7 @@
             // 
             // ModeloTextBox
             // 
+            this.ModeloTextBox.Enabled = false;
             this.ModeloTextBox.Location = new System.Drawing.Point(499, 59);
             this.ModeloTextBox.Name = "ModeloTextBox";
             this.ModeloTextBox.Size = new System.Drawing.Size(182, 20);
@@ -278,6 +288,7 @@
             // 
             // DescripcionTextBox
             // 
+            this.DescripcionTextBox.Enabled = false;
             this.DescripcionTextBox.Location = new System.Drawing.Point(499, 114);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(253, 20);
@@ -294,19 +305,21 @@
             // 
             // PrecioNumericUpDown
             // 
+            this.PrecioNumericUpDown.Enabled = false;
             this.PrecioNumericUpDown.Location = new System.Drawing.Point(499, 145);
             this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.PrecioNumericUpDown.TabIndex = 48;
             // 
-            // dateTimePicker1
+            // DateTimePickerF
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(499, 171);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker1.TabIndex = 47;
+            this.DateTimePickerF.CustomFormat = "dd/MM/yyyy";
+            this.DateTimePickerF.Enabled = false;
+            this.DateTimePickerF.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateTimePickerF.Location = new System.Drawing.Point(499, 171);
+            this.DateTimePickerF.Name = "DateTimePickerF";
+            this.DateTimePickerF.Size = new System.Drawing.Size(118, 20);
+            this.DateTimePickerF.TabIndex = 47;
             // 
             // label11
             // 
@@ -328,6 +341,7 @@
             // 
             // AnioTextBox
             // 
+            this.AnioTextBox.Enabled = false;
             this.AnioTextBox.Location = new System.Drawing.Point(500, 4);
             this.AnioTextBox.Name = "AnioTextBox";
             this.AnioTextBox.Size = new System.Drawing.Size(119, 20);
@@ -342,16 +356,60 @@
             this.label13.TabIndex = 49;
             this.label13.Text = "Año";
             // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.EliminarButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
+            this.EliminarButton.Location = new System.Drawing.Point(485, 493);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(89, 52);
+            this.EliminarButton.TabIndex = 53;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.EliminarButton.UseVisualStyleBackColor = false;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click_1);
+            // 
+            // NuevoButton
+            // 
+            this.NuevoButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.NuevoButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
+            this.NuevoButton.Location = new System.Drawing.Point(272, 493);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(89, 52);
+            this.NuevoButton.TabIndex = 52;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.NuevoButton.UseVisualStyleBackColor = false;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.GuardarButton.BackColor = System.Drawing.Color.White;
+            this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
+            this.GuardarButton.Location = new System.Drawing.Point(378, 493);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(89, 52);
+            this.GuardarButton.TabIndex = 51;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.GuardarButton.UseVisualStyleBackColor = false;
+            // 
             // rRenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(901, 503);
+            this.ClientSize = new System.Drawing.Size(901, 555);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.NuevoButton);
+            this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.AnioTextBox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.PrecioNumericUpDown);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DateTimePickerF);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.DescripcionTextBox);
@@ -369,9 +427,9 @@
             this.Controls.Add(this.AgregarDetalleButton);
             this.Controls.Add(this.ClientecomboBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.EliminarDetalleButton);
             this.Controls.Add(this.RentarButton);
-            this.Controls.Add(this.FerchaDevueltaDateTimePicker);
+            this.Controls.Add(this.FechaDevueltaDateTimePicker);
             this.Controls.Add(this.FechaRegistroDateTimePicker);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -379,6 +437,7 @@
             this.Controls.Add(this.Vehiculo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DetalleDataGridView);
+            this.MaximizeBox = false;
             this.Name = "rRenta";
             this.Text = "rRenta";
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
@@ -400,9 +459,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker FechaRegistroDateTimePicker;
-        private System.Windows.Forms.DateTimePicker FerchaDevueltaDateTimePicker;
+        private System.Windows.Forms.DateTimePicker FechaDevueltaDateTimePicker;
         private System.Windows.Forms.Button RentarButton;
-        private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button EliminarDetalleButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox ClientecomboBox;
         private System.Windows.Forms.Button AgregarDetalleButton;
@@ -420,10 +479,13 @@
         private System.Windows.Forms.TextBox DescripcionTextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown PrecioNumericUpDown;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DateTimePickerF;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox AnioTextBox;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button GuardarButton;
     }
 }

@@ -217,6 +217,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "rMantenimiento";
             this.Text = "rMantenimiento";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

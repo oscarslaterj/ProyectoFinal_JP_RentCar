@@ -290,6 +290,7 @@
             this.Controls.Add(this.NombresTextBox);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "rClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "rClientes";
