@@ -19,6 +19,7 @@ namespace ProyectoFinal.UI.Registros
         public rUsuarios()
         {
             InitializeComponent();
+            LlenarComboNivel();
         }
 
         public void LlenarCampos(Usuarios usuarios)
@@ -50,6 +51,14 @@ namespace ProyectoFinal.UI.Registros
             repositorio = new RepositorioBase<Usuarios>(new DAL.Contexto());
             Usuarios usuario = repositorio.Buscar((int)UserIdNumericUpDown.Value);
             return (usuario != null);
+        }
+
+        private void LlenarComboNivel()
+        {
+ 
+            NivelAccesoComboBox.Items.Clear();   
+            NivelAccesoComboBox.Items.Add(new KeyValuePair<string, string>("Admin", "(Admin)"));
+            NivelAccesoComboBox.Items.Add(new KeyValuePair<string, string>("Usuario", "(User)"));
         }
 
 
@@ -186,6 +195,39 @@ namespace ProyectoFinal.UI.Registros
             }
             else
                 MessageBox.Show("No se Pudo Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void UserNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void NameUserTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8))
+                e.Handled = false;
+            else
+                e.Handled = true;
+
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

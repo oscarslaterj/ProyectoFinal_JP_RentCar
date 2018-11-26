@@ -100,6 +100,7 @@
             this.ModeloTextBox.Name = "ModeloTextBox";
             this.ModeloTextBox.Size = new System.Drawing.Size(182, 20);
             this.ModeloTextBox.TabIndex = 4;
+            this.ModeloTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModeloTextBox_KeyPress);
             // 
             // MarcaTextBox
             // 
@@ -107,6 +108,7 @@
             this.MarcaTextBox.Name = "MarcaTextBox";
             this.MarcaTextBox.Size = new System.Drawing.Size(182, 20);
             this.MarcaTextBox.TabIndex = 5;
+            this.MarcaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MarcaTextBox_KeyPress);
             // 
             // PlacaTextBox
             // 
@@ -114,6 +116,7 @@
             this.PlacaTextBox.Name = "PlacaTextBox";
             this.PlacaTextBox.Size = new System.Drawing.Size(119, 20);
             this.PlacaTextBox.TabIndex = 7;
+            this.PlacaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PlacaTextBox_KeyPress);
             // 
             // label5
             // 
@@ -130,6 +133,7 @@
             this.AnioTextBox.Name = "AnioTextBox";
             this.AnioTextBox.Size = new System.Drawing.Size(119, 20);
             this.AnioTextBox.TabIndex = 9;
+            this.AnioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AnioTextBox_KeyPress);
             // 
             // DescripcionTextBox
             // 
@@ -137,6 +141,7 @@
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(253, 20);
             this.DescripcionTextBox.TabIndex = 11;
+            this.DescripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTextBox_KeyPress);
             // 
             // label6
             // 

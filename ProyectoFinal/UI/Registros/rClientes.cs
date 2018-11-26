@@ -16,6 +16,7 @@ namespace ProyectoFinal.UI.Registros
         public rClientes()
         {
             InitializeComponent();
+            LlenarComboSexo();
         }
 
         public void Limpiar()
@@ -23,7 +24,7 @@ namespace ProyectoFinal.UI.Registros
             ClienteIdNumericUpDown.Value = 0;
             NombresTextBox.Clear();
             DireccionTextBox.Clear();
-            SexoComboBox.SelectedItem = null;
+            SexoComboBox.Items.Clear();
             TelefonoMaskedTextBox.Clear();
             CedulaMaskedTextBox.Clear();
             FechaNacimientoDateTimePicker.ResetText();
@@ -33,6 +34,17 @@ namespace ProyectoFinal.UI.Registros
             ErrorProvider.Clear();
 
         }
+
+        private void LlenarComboSexo()
+        {
+            //Vaciar comboBox para que los items que vamos a añadir no se repitan
+            SexoComboBox.Items.Clear();
+
+            //Incluir dos items Hombre y Mujer
+            SexoComboBox.Items.Add(new KeyValuePair<string, string>("Hombre", "(H)"));
+            SexoComboBox.Items.Add(new KeyValuePair<string, string>("Mujer", "(M)"));
+        }
+
 
         private Clientes LlenarClase()
         {
@@ -173,6 +185,31 @@ namespace ProyectoFinal.UI.Registros
             {
                 MessageBox.Show("no se pudo guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+        }
+
+        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8))
+                e.Handled = false;
+            else
+                e.Handled = true;
+
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }
