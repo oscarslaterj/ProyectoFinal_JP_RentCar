@@ -42,6 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ImprimirButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -152,6 +153,19 @@
             // 
             this.ErrorProvider.ContainerControl = this;
             // 
+            // ImprimirButton
+            // 
+            this.ImprimirButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ImprimirButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ImprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("ImprimirButton.Image")));
+            this.ImprimirButton.Location = new System.Drawing.Point(783, 368);
+            this.ImprimirButton.Name = "ImprimirButton";
+            this.ImprimirButton.Size = new System.Drawing.Size(145, 70);
+            this.ImprimirButton.TabIndex = 38;
+            this.ImprimirButton.Text = "Imprimir";
+            this.ImprimirButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ImprimirButton.UseVisualStyleBackColor = false;
+            // 
             // cVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +174,7 @@
             this.BackgroundImage = global::ProyectoFinal.Properties.Resources.pkw;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(940, 450);
+            this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CriterioTextBox);
             this.Controls.Add(this.BuscarButton);
@@ -195,5 +210,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
+        private System.Windows.Forms.Button ImprimirButton;
     }
 }

@@ -40,7 +40,7 @@ namespace ProyectoFinal.UI.Registros
 
         private bool Validar()
         {
-
+            bool paso = false;
             return paso;
         }
 

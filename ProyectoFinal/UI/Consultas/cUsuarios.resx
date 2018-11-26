@@ -162,4 +162,18 @@
         gg==
 </value>
   </data>
+  <data name="ImprimirButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAfpJREFUaEPt2D8ohHEcx/FDBkr+ZFEsQrIYbJJSDFKUUhKDrCYrBqXEZBDZlEEo
+        BgalyGYzG4SBhUFR8t/7e+enp/N7Hs957vmn36dedc9zv7t7Pnf3Pc8jYRLjFOMjQLvwJf+uyGVyy790
+        wRRxE1Mkw5gibmOKZBhTxG1MkQyTtSKFqNZohLzAlWWfH0Ygr3Ng2WdVhRzYRt7xTbxAnijKbjEMbVYg
+        i+5xFmEXeP/SjB+5wxsqklvRziTkTZ9NbqVF7pAyccgA5HgXk1tpiWqRSuSnbn4nVkXysAM5rmvUQyVW
+        RVogx6RYDzpWRWrxClVkHCqxm5FBHGIe8odaJZbDrospErV4KiI/h00BqoFdPBVRp/FBcTqNz0qRR+z7
+        6ASBFInChZUpIrErUod2D9pQBJVQipTgCbLfi1WohFIkFwvQDa1be+iGiucicun4kLqpTZRmZAi2RU4h
+        d05A913uga5IA3TrnZTBLqrIMXSP7cQRZM0YfqQf8qnIAifWIqV4hm6dky3YRRX5zTlkRrVpxRI2NLYh
+        T5A+I3PQrXdinYn0qCJyVah77Dqm4PSpOiZKM+IpdkXkBK/Pg16UQyWUIjIj1svRv1qDSihF5H+w09B9
+        l92SEh1QCe2rle2YIm6jitxAN7TZMoNAigTFtyIFWA7QKEximkTiE+s+ObNjtQSdAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

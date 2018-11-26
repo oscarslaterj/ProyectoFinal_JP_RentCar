@@ -40,6 +40,7 @@
             this.BuscarButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
+            this.ImprimirButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,6 +145,19 @@
             this.CriterioTextBox.Size = new System.Drawing.Size(299, 20);
             this.CriterioTextBox.TabIndex = 43;
             // 
+            // ImprimirButton
+            // 
+            this.ImprimirButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ImprimirButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ImprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("ImprimirButton.Image")));
+            this.ImprimirButton.Location = new System.Drawing.Point(775, 368);
+            this.ImprimirButton.Name = "ImprimirButton";
+            this.ImprimirButton.Size = new System.Drawing.Size(145, 70);
+            this.ImprimirButton.TabIndex = 45;
+            this.ImprimirButton.Text = "Imprimir";
+            this.ImprimirButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ImprimirButton.UseVisualStyleBackColor = false;
+            // 
             // cMantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,6 +166,7 @@
             this.BackgroundImage = global::ProyectoFinal.Properties.Resources.pkw;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(932, 450);
+            this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CriterioTextBox);
             this.Controls.Add(this.BuscarButton);
@@ -185,5 +200,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CriterioTextBox;
+        private System.Windows.Forms.Button ImprimirButton;
     }
 }
