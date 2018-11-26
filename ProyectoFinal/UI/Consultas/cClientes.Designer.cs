@@ -38,6 +38,8 @@
             this.BuscarButton = new System.Windows.Forms.Button();
             this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CriterioTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(281, 48);
+            this.label2.Location = new System.Drawing.Point(585, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 2;
@@ -70,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(509, 48);
+            this.label3.Location = new System.Drawing.Point(709, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 3;
@@ -80,18 +82,18 @@
             // 
             this.DesdeDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdeDateTimePicker.Location = new System.Drawing.Point(284, 76);
+            this.DesdeDateTimePicker.Location = new System.Drawing.Point(588, 76);
             this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
-            this.DesdeDateTimePicker.Size = new System.Drawing.Size(133, 20);
+            this.DesdeDateTimePicker.Size = new System.Drawing.Size(109, 20);
             this.DesdeDateTimePicker.TabIndex = 4;
             // 
             // HastaDateTimePicker
             // 
             this.HastaDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(512, 77);
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(712, 76);
             this.HastaDateTimePicker.Name = "HastaDateTimePicker";
-            this.HastaDateTimePicker.Size = new System.Drawing.Size(133, 20);
+            this.HastaDateTimePicker.Size = new System.Drawing.Size(107, 20);
             this.HastaDateTimePicker.TabIndex = 5;
             // 
             // BuscarButton
@@ -99,7 +101,7 @@
             this.BuscarButton.BackColor = System.Drawing.Color.White;
             this.BuscarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(696, 68);
+            this.BuscarButton.Location = new System.Drawing.Point(794, 12);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(91, 35);
             this.BuscarButton.TabIndex = 21;
@@ -113,18 +115,34 @@
             this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultaDataGridView.Location = new System.Drawing.Point(7, 109);
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
-            this.ConsultaDataGridView.Size = new System.Drawing.Size(799, 222);
+            this.ConsultaDataGridView.Size = new System.Drawing.Size(923, 222);
             this.ConsultaDataGridView.TabIndex = 22;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(50, 21);
+            this.label4.Location = new System.Drawing.Point(12, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Consulta de Clientes";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(266, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Criterio";
+            // 
+            // CriterioTextBox
+            // 
+            this.CriterioTextBox.Location = new System.Drawing.Point(269, 76);
+            this.CriterioTextBox.Name = "CriterioTextBox";
+            this.CriterioTextBox.Size = new System.Drawing.Size(299, 20);
+            this.CriterioTextBox.TabIndex = 35;
             // 
             // cClientes
             // 
@@ -133,7 +151,9 @@
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.BackgroundImage = global::ProyectoFinal.Properties.Resources.pkw;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(837, 430);
+            this.ClientSize = new System.Drawing.Size(942, 430);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.CriterioTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ConsultaDataGridView);
             this.Controls.Add(this.BuscarButton);
@@ -163,5 +183,7 @@
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.DataGridView ConsultaDataGridView;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox CriterioTextBox;
     }
 }
