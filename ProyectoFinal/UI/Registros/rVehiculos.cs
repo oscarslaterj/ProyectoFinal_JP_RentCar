@@ -70,7 +70,7 @@ namespace ProyectoFinal.UI.Registros
 
 
 
-            if (error == 2 && FechaRegistroDateTimePicker.Value == DateTime.Now || FechaRegistroDateTimePicker.Value < DateTime.Now)
+            if (error == 2 && FechaRegistroDateTimePicker.Value == DateTime.Now || FechaRegistroDateTimePicker.Value > DateTime.Now)
             {
                 ErrorProvider.SetError(FechaRegistroDateTimePicker, "Fecha Fuera De Rango");
                 paso = false;

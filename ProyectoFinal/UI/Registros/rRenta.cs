@@ -61,8 +61,10 @@ namespace ProyectoFinal.UI.Registros
 
         private bool Validar()
         {
-            bool paso = false;
-            return paso;
+            bool Validar = true;
+  
+
+            return Validar;
         }
 
 
@@ -163,6 +165,8 @@ namespace ProyectoFinal.UI.Registros
                 MessageBox.Show("Guardado");
             else
                 MessageBox.Show("No Guardado");
+
+
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
