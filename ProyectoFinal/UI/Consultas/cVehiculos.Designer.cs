@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cVehiculos));
             this.label4 = new System.Windows.Forms.Label();
             this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
@@ -35,12 +36,14 @@
             this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.FailtroComboBox = new System.Windows.Forms.ComboBox();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -98,13 +101,13 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Desde";
             // 
-            // FailtroComboBox
+            // FiltroComboBox
             // 
-            this.FailtroComboBox.FormattingEnabled = true;
-            this.FailtroComboBox.Location = new System.Drawing.Point(7, 74);
-            this.FailtroComboBox.Name = "FailtroComboBox";
-            this.FailtroComboBox.Size = new System.Drawing.Size(235, 21);
-            this.FailtroComboBox.TabIndex = 25;
+            this.FiltroComboBox.FormattingEnabled = true;
+            this.FiltroComboBox.Location = new System.Drawing.Point(7, 74);
+            this.FiltroComboBox.Name = "FiltroComboBox";
+            this.FiltroComboBox.Size = new System.Drawing.Size(235, 21);
+            this.FiltroComboBox.TabIndex = 25;
             // 
             // label1
             // 
@@ -127,6 +130,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = false;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // label5
             // 
@@ -143,6 +147,10 @@
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(299, 20);
             this.CriterioTextBox.TabIndex = 35;
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
             // 
             // cVehiculos
             // 
@@ -161,12 +169,13 @@
             this.Controls.Add(this.DesdeDateTimePicker);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.FailtroComboBox);
+            this.Controls.Add(this.FiltroComboBox);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "cVehiculos";
             this.Text = "cVehiculos";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,10 +189,11 @@
         private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox FailtroComboBox;
+        private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CriterioTextBox;
+        private System.Windows.Forms.ErrorProvider ErrorProvider;
     }
 }

@@ -33,8 +33,13 @@ namespace ProyectoFinal.Entidades
             Descripcion = string.Empty;
             PrecioRenta = 0;
             FechaRegistro = DateTime.Now;
-        }
 
+       
+    }
+        public override string ToString()
+        {
+            return this.Descripcion;
+        }
 
     }
 }
