@@ -55,6 +55,7 @@
             // 
             // FiltroComboBox
             // 
+            this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Location = new System.Drawing.Point(11, 76);
             this.FiltroComboBox.Name = "FiltroComboBox";

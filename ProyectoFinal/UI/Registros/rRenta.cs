@@ -1,5 +1,6 @@
 ﻿using ProyectoFinal.BLL;
 using ProyectoFinal.Entidades;
+using ProyectoFinal.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,7 +63,7 @@ namespace ProyectoFinal.UI.Registros
         private bool Validar()
         {
             bool Validar = true;
-  
+
 
             return Validar;
         }
@@ -81,7 +82,7 @@ namespace ProyectoFinal.UI.Registros
         }
 
 
-            private void AgregarDetalleButton_Click(object sender, EventArgs e)
+        private void AgregarDetalleButton_Click(object sender, EventArgs e)
         {
 
             //if (DetalleDataGridView.DataSource != null)
@@ -99,7 +100,7 @@ namespace ProyectoFinal.UI.Registros
             //   );
             if (DetalleDataGridView.DataSource != null)
                 this.Detalle = (List<RentasDetalle>)DetalleDataGridView.DataSource;
-            this.Detalle.Add(new RentasDetalle(0, vehiculo.VehiculoID,(int)RentaIDnumericUpDown.Value , vehiculo.Anio, vehiculo.Marca
+            this.Detalle.Add(new RentasDetalle(0, vehiculo.VehiculoID, (int)RentaIDnumericUpDown.Value, vehiculo.Anio, vehiculo.Marca
                                 , vehiculo.Modelo, vehiculo.PrecioRenta));
             ErrorProvider.Clear();
             CargarGrid();
@@ -123,7 +124,7 @@ namespace ProyectoFinal.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-              if(DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow !=null)
+            if (DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
             {
                 Detalle.RemoveAt(Index);
                 CargarGrid();
@@ -133,7 +134,7 @@ namespace ProyectoFinal.UI.Registros
 
         private void VehiculosDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Index = e.RowIndex; 
+            Index = e.RowIndex;
         }
 
 
@@ -152,19 +153,33 @@ namespace ProyectoFinal.UI.Registros
 
         private void RentarButton_Click(object sender, EventArgs e)
         {
-            
+
             bool paso = false;
             Renta renta = LlenaClase();
             if (RentaIDnumericUpDown.Value == 0)
+
                 paso = RentaBLL.Guardar(renta);
+
             else
             {
                 paso = RentaBLL.Modificar(renta);
             }
+
             if (paso)
+
+            {
+                var resultado = MessageBox.Show("¿Quiere Imprimir un Recibo?", "JP Rent A Car",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 MessageBox.Show("Guardado");
+                if (resultado == DialogResult.Yes)
+                {
+                    ReporteRentaDetalle reporte = new ReporteRentaDetalle(renta.Detalle);
+                    reporte.Show();
+                }
+                Limpiar();
+            }
             else
-                MessageBox.Show("No Guardado");
+                MessageBox.Show("No Se Guardo Su Renta!!", "JP Rent A Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
         }

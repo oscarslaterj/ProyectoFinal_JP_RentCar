@@ -114,6 +114,7 @@
             // 
             // FailtroComboBox
             // 
+            this.FailtroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FailtroComboBox.FormattingEnabled = true;
             this.FailtroComboBox.Location = new System.Drawing.Point(9, 81);
             this.FailtroComboBox.Name = "FailtroComboBox";
