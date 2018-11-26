@@ -61,7 +61,7 @@ namespace ProyectoFinal.UI.Registros
             private void AgregarDetalleButton_Click(object sender, EventArgs e)
         {
 
-            if (DetalleDataGridView.DataSource != null)
+          /*  if (DetalleDataGridView.DataSource != null)
                 this.Detalle = (List<VehiculosDetalle>)DetalleDataGridView.DataSource;
             //todo: validar campos del detalle
             if (!ValidarAgregarVehiculo())
@@ -73,7 +73,7 @@ namespace ProyectoFinal.UI.Registros
                      placa: 
 
                     )
-               );
+               );*/
             ErrorProvider.Clear();
             CargarGrid();
         }

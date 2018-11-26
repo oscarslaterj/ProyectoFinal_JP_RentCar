@@ -148,10 +148,10 @@
             // 
             // ImprimirButton
             // 
-            this.ImprimirButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ImprimirButton.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ImprimirButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ImprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("ImprimirButton.Image")));
-            this.ImprimirButton.Location = new System.Drawing.Point(794, 353);
+            this.ImprimirButton.Location = new System.Drawing.Point(774, 353);
             this.ImprimirButton.Name = "ImprimirButton";
             this.ImprimirButton.Size = new System.Drawing.Size(145, 70);
             this.ImprimirButton.TabIndex = 37;

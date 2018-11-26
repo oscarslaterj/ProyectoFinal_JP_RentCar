@@ -48,7 +48,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 28);
+            this.label4.Location = new System.Drawing.Point(8, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(181, 20);
             this.label4.TabIndex = 32;
@@ -58,7 +58,7 @@
             // 
             this.ConsultaDataGridView.BackgroundColor = System.Drawing.SystemColors.GrayText;
             this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultaDataGridView.Location = new System.Drawing.Point(3, 136);
+            this.ConsultaDataGridView.Location = new System.Drawing.Point(12, 140);
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
             this.ConsultaDataGridView.Size = new System.Drawing.Size(853, 222);
             this.ConsultaDataGridView.TabIndex = 31;
@@ -121,7 +121,7 @@
             this.BuscarButton.BackColor = System.Drawing.Color.White;
             this.BuscarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(836, 22);
+            this.BuscarButton.Location = new System.Drawing.Point(826, 22);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(93, 35);
             this.BuscarButton.TabIndex = 30;
@@ -148,7 +148,7 @@
             // 
             // ImprimirButton
             // 
-            this.ImprimirButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ImprimirButton.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ImprimirButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ImprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("ImprimirButton.Image")));
             this.ImprimirButton.Location = new System.Drawing.Point(774, 368);

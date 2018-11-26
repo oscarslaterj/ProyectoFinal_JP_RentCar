@@ -19,7 +19,7 @@ namespace ProyectoFinal.UI.Consultas
         public cVehiculos()
         {
             InitializeComponent();
-            FiltroComboBox.SelectedIndex = 0;//Seleccionamos por default el Campo "Todos" de nuestro ComboBox
+            //FiltroComboBox.SelectedIndex = 0;//Seleccionamos por default el Campo "Todos" de nuestro ComboBox
         }
 
         private bool Validar()
