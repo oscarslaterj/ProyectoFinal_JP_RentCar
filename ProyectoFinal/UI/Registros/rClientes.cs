@@ -74,17 +74,17 @@ namespace ProyectoFinal.UI.Registros
                 Validar = false;
             }
 
-            if (string.IsNullOrWhiteSpace(SexoComboBox.Text))
+            /*if (string.IsNullOrWhiteSpace(SexoComboBox.Text))
             {
                 ErrorProvider.SetError(SexoComboBox, "Debes llenar este campo");
                 Validar = false;
-            }
+            }*/
 
-            if (string.IsNullOrWhiteSpace(CedulaMaskedTextBox.Text.Replace("-","")))
+            /*if (string.IsNullOrWhiteSpace(CedulaMaskedTextBox.Text.Replace("-","")))
             {
                 ErrorProvider.SetError(CedulaMaskedTextBox, "Debes llenar este campo");
                 Validar = false;
-            }
+            }*/
 
             if (string.IsNullOrWhiteSpace(DireccionTextBox.Text))
             {
@@ -92,11 +92,11 @@ namespace ProyectoFinal.UI.Registros
                 Validar = false;
             }
 
-            if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text.Replace("-","")))
+           /* if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text.Replace("-","")))
             {
                 ErrorProvider.SetError(TelefonoMaskedTextBox, "Debes llenar este campo");
                 Validar = false;
-            }
+            }*/
 
             return Validar;
         }

@@ -22,18 +22,21 @@ namespace ProyectoFinal
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rUsuarios registrousuarios = new rUsuarios();
+            registrousuarios.MdiParent = this;
             registrousuarios.Show();
         }
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rClientes registroclientes = new rClientes();
+            registroclientes.MdiParent = this;
             registroclientes.Show();
         }
 
         private void vehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rVehiculos registrovehiculos = new rVehiculos();
+            registrovehiculos.MdiParent = this;
             registrovehiculos.Show();
         }
 
