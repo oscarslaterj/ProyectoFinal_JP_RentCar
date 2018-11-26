@@ -39,12 +39,20 @@ namespace ProyectoFinal.BLL
             try
             {
                 var Anterior = db.Renta.Find(renta.RentaID);
-                foreach (var item in Anterior.Vehiculos)
-                {
-                    if (!renta.Vehiculos.Exists(d => d.VehiculoID== item.VehiculoID))
-                        db.Entry(item).State = EntityState.Deleted;
-                }
                 db.Entry(renta).State = EntityState.Modified;
+                foreach (var item in Anterior.Detalle)
+                {
+                    /*if (!renta.Vehiculos.Exists(d => d.VehiculoID== item.VehiculoID))
+                        db.Entry(item).State = EntityState.Deleted;*/
+                    if (item.IdVehiculo == 0)
+                        guardarDetalle(item);
+                    else
+                    {
+                        db.Entry(item).State = EntityState.Modified;
+                        paso = db.SaveChanges() > 0;
+                    }
+                }
+                
                 paso = (db.SaveChanges() > 0);
             }
             catch (Exception)
@@ -53,6 +61,25 @@ namespace ProyectoFinal.BLL
             { db.Dispose(); }
 
             return paso;
+        }
+
+        private static bool guardarDetalle(RentasDetalle Detalle)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+            try
+            {
+                if(db.Rentadetalle.Add(Detalle)!=null)
+                {
+                    db.SaveChanges();
+                    paso = true;
+                }
+            }catch(Exception)
+            { throw; }
+            finally
+            { db.Dispose(); }
+            return paso;
+
         }
 
         public static bool Eliminar(int Id)
@@ -83,7 +110,7 @@ namespace ProyectoFinal.BLL
             try
             {
                 renta = db.Renta.Find(Id);
-               renta.Vehiculos.Count();
+               renta.Detalle.Count();
             }
             catch (Exception)
             {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Entidades
 {
-   public class Vehiculos
+   public class VehiculosDetalle
     {
         [Key]
 
@@ -22,7 +22,7 @@ namespace ProyectoFinal.Entidades
         public DateTime FechaRegistro { get; set; }
 
 
-        public Vehiculos()
+        public VehiculosDetalle()
         {
             VehiculoID = 0;
             Placa = string.Empty;
@@ -34,8 +34,21 @@ namespace ProyectoFinal.Entidades
             PrecioRenta = 0;
             FechaRegistro = DateTime.Now;
 
-       
     }
+
+        public VehiculosDetalle(int vehiculoID, string placa, string tipo, string marca, string modelo, string anio, string descripcion, decimal precioRenta, DateTime fechaRegistro)
+        {
+            VehiculoID = vehiculoID;
+            Placa = placa;
+            Tipo = tipo;
+            Marca = marca;
+            Modelo = modelo;
+            Anio = anio;
+            Descripcion = descripcion;
+            PrecioRenta = precioRenta;
+            FechaRegistro = fechaRegistro;
+        }
+
         public override string ToString()
         {
             return this.Descripcion;

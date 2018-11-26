@@ -14,7 +14,7 @@ namespace ProyectoFinal.Entidades
         public DateTime FechaRegistro { get; set; }
         public DateTime FechaDevuelta { get; set; }
 
-        public virtual List<Vehiculos> Vehiculos { get; set; }
+        public virtual List<RentasDetalle> Detalle { get; set; }
 
         public Renta()
         {
@@ -22,7 +22,7 @@ namespace ProyectoFinal.Entidades
             FechaRegistro = DateTime.Now;
             FechaDevuelta = DateTime.Now;
 
-            Vehiculos = new List<Vehiculos>();
+            Detalle = new List<RentasDetalle>();
         }
 
 

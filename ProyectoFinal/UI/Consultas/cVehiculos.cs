@@ -15,7 +15,7 @@ namespace ProyectoFinal.UI.Consultas
 {
     public partial class cVehiculos : Form
     {
-        RepositorioBase<Vehiculos> repositorio;
+        RepositorioBase<VehiculosDetalle> repositorio;
         public cVehiculos()
         {
             InitializeComponent();

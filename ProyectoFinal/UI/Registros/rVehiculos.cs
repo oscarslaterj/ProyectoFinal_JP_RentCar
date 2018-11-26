@@ -35,9 +35,9 @@ namespace ProyectoFinal.UI.Registros
             FechaRegistroDateTimePicker.Value = DateTime.Now;
         }
 
-        private Vehiculos LlenaClase()
+        private VehiculosDetalle LlenaClase()
         {
-           Vehiculos vehiculos= new Vehiculos();
+           VehiculosDetalle vehiculos= new VehiculosDetalle();
             vehiculos.VehiculoID = Convert.ToInt32(VehiculoNumericUpDown.Value);
             vehiculos.Descripcion = DescripcionTextBox.Text;
             vehiculos.Marca = MarcaTextBox.Text;
@@ -51,7 +51,7 @@ namespace ProyectoFinal.UI.Registros
             return vehiculos;
         }
 
-        private void LlenaCampos(Vehiculos vehiculos)
+        private void LlenaCampos(VehiculosDetalle vehiculos)
         {
             VehiculoNumericUpDown.Value = vehiculos.VehiculoID;
             MarcaTextBox.Text = vehiculos.Marca;
@@ -116,8 +116,8 @@ namespace ProyectoFinal.UI.Registros
 
         public bool ExiteEnLaBaseDeDatos()
         {
-            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
-            Vehiculos articulos = new Vehiculos();
+            RepositorioBase<VehiculosDetalle> repositorio = new RepositorioBase<VehiculosDetalle>();
+            VehiculosDetalle articulos = new VehiculosDetalle();
             articulos = repositorio.Buscar((int)VehiculoNumericUpDown.Value);
             return (articulos != null);
         }
@@ -130,9 +130,9 @@ namespace ProyectoFinal.UI.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
+            RepositorioBase<VehiculosDetalle> repositorio = new RepositorioBase<VehiculosDetalle>();
 
-            Vehiculos vehiculos;
+            VehiculosDetalle vehiculos;
 
             if (!Validar(2))
                 return;
@@ -169,7 +169,7 @@ namespace ProyectoFinal.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
+            RepositorioBase<VehiculosDetalle> repositorio = new RepositorioBase<VehiculosDetalle>();
             int id;
             int.TryParse(VehiculoNumericUpDown.Text, out id);
             if (!ExiteEnLaBaseDeDatos())
@@ -191,9 +191,9 @@ namespace ProyectoFinal.UI.Registros
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
+            RepositorioBase<VehiculosDetalle> repositorio = new RepositorioBase<VehiculosDetalle>();
             int id;
-            Vehiculos vehiculos = new Vehiculos();
+            VehiculosDetalle vehiculos = new VehiculosDetalle();
 
             int.TryParse(VehiculoNumericUpDown.Text, out id);
             vehiculos = repositorio.Buscar(id);
