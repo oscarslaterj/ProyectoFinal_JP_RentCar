@@ -15,17 +15,18 @@ namespace ProyectoFinal.UI.Consultas
 {
     public partial class cUsuarios : Form
     {
-        RepositorioBase<Usuarios> repositorioBase;
+        
         Expression<Func<Usuarios, bool>> filtro = x => true;
         public cUsuarios()
         {
             InitializeComponent();
-            repositorioBase = new RepositorioBase<Usuarios>(new DAL.Contexto());
+         
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             var listado = new List<Usuarios>();
+            RepositorioBase<Usuarios> repositorioBase = new RepositorioBase<Usuarios>();
             if (CriterioTextBox.Text.Trim().Length > 0)
             {
 

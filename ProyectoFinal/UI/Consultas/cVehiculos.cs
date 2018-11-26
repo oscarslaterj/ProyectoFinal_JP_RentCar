@@ -36,7 +36,7 @@ namespace ProyectoFinal.UI.Consultas
         }
 
 
-        private void Seleccion()
+       /* private void Seleccion()
         {
             repositorio = new RepositorioBase<Vehiculos>();
             var lista = new List<Vehiculos>();
@@ -81,7 +81,7 @@ namespace ProyectoFinal.UI.Consultas
             }
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = lista;
-        }
+        }*/
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {

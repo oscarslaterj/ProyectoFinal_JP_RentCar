@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BLL\ClientesBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
+    <Compile Include="BLL\RentaBLL.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Clientes.cs" />
@@ -171,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rClientes.resx">
       <DependentUpon>rClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rMantenimiento.resx">
+      <DependentUpon>rMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rRenta.resx">
       <DependentUpon>rRenta.cs</DependentUpon>

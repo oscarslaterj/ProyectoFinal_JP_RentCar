@@ -12,9 +12,7 @@ namespace ProyectoFinal.BLL
     public class RepositorioBase<T> : IDisposable, IRepository<T> where T : class
     {
         internal Contexto _contexto;
-
-
-        public RepositorioBase(Contexto contexto)
+        public RepositorioBase()
         {
             _contexto = new Contexto();
         }

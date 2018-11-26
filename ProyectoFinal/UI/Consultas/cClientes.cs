@@ -17,16 +17,16 @@ namespace ProyectoFinal.UI.Consultas
     {
 
         Expression<Func<Clientes, bool>> filtro = x => true;
-        RepositorioBase<Clientes> repositorioBase;
+       
         public cClientes()
         {
             InitializeComponent();
-            repositorioBase = new RepositorioBase<Clientes>(new DAL.Contexto());
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             var listado = new List<Clientes>();
+            RepositorioBase<Clientes> repositorioBase = new RepositorioBase<Clientes>();
             if (CriterioTextBox.Text.Trim().Length > 0)
             {
 

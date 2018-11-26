@@ -9,6 +9,7 @@ namespace ProyectoFinal.Entidades
     public class Mantenimiento
     {
         public string Concepto { get; set; }
+        public string Taller { get; set; }
         public DateTime Fecha { get; set; }
     }
 }

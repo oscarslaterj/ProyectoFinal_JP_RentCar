@@ -16,8 +16,8 @@ namespace ProyectoFinal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-           // Application.Run(new mainform());
+            //Application.Run(new Login());
+            Application.Run(new mainform());
         }
     }
 }

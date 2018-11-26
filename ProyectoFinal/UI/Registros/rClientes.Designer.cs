@@ -102,7 +102,7 @@
             // TelefonoMaskedTextBox
             // 
             this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(107, 200);
-            this.TelefonoMaskedTextBox.Mask = "(999) - 999 - 9999";
+            this.TelefonoMaskedTextBox.Mask = "000-000-0000";
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
             this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(118, 20);
             this.TelefonoMaskedTextBox.TabIndex = 5;

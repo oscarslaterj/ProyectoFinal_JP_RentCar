@@ -16,14 +16,12 @@ namespace ProyectoFinal.UI.Registros
 {
     public partial class rVehiculos : Form
     {
-        RepositorioBase<Vehiculos> repositorio;
+        
         public rVehiculos()
         {
             InitializeComponent();
-            
+            LlenarTipoCombo();
         }
-
-
         private void Limpiar()
         {
             VehiculoNumericUpDown.Value = 0;
@@ -118,7 +116,7 @@ namespace ProyectoFinal.UI.Registros
 
         public bool ExiteEnLaBaseDeDatos()
         {
-            repositorio = new RepositorioBase<Vehiculos>(new DAL.Contexto());
+            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
             Vehiculos articulos = new Vehiculos();
             articulos = repositorio.Buscar((int)VehiculoNumericUpDown.Value);
             return (articulos != null);
@@ -132,7 +130,7 @@ namespace ProyectoFinal.UI.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-            repositorio = new RepositorioBase<Vehiculos>(new DAL.Contexto());
+            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
 
             Vehiculos vehiculos;
 
@@ -171,7 +169,7 @@ namespace ProyectoFinal.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Vehiculos>(new DAL.Contexto());
+            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
             int id;
             int.TryParse(VehiculoNumericUpDown.Text, out id);
             if (!ExiteEnLaBaseDeDatos())
@@ -193,7 +191,7 @@ namespace ProyectoFinal.UI.Registros
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Vehiculos>(new DAL.Contexto());
+            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
             int id;
             Vehiculos vehiculos = new Vehiculos();
 
@@ -289,5 +287,13 @@ namespace ProyectoFinal.UI.Registros
             else
                 e.Handled = true;
         }
+
+        private void LlenarTipoCombo()
+        {
+            TipoComboBox.Items.Add("Sedan");
+            TipoComboBox.Items.Add("Deportivo");
+            TipoComboBox.Items.Add("Coupe");
+        }
+       
     }
     }

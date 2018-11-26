@@ -1,4 +1,5 @@
-﻿using ProyectoFinal.Entidades;
+﻿using ProyectoFinal.BLL;
+using ProyectoFinal.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,7 @@ namespace ProyectoFinal.UI.Registros
             TelefonoMaskedTextBox.Clear();
             CedulaMaskedTextBox.Clear();
             FechaNacimientoDateTimePicker.ResetText();
-          
+            LlenarComboSexo();
 
 
             ErrorProvider.Clear();
@@ -46,7 +47,7 @@ namespace ProyectoFinal.UI.Registros
         }
 
 
-        private Clientes LlenarClase()
+        private Clientes LlenaClase()
         {
             Clientes clientes = new Clientes();
 
@@ -65,39 +66,45 @@ namespace ProyectoFinal.UI.Registros
 
         private bool Validar()
         {
-            bool Validar = false;
+            bool Validar = true;
 
             if (string.IsNullOrWhiteSpace(NombresTextBox.Text))
             {
                 ErrorProvider.SetError(NombresTextBox, "Debes llenar este campo");
-                Validar = true;
+                Validar = false;
             }
 
             if (string.IsNullOrWhiteSpace(SexoComboBox.Text))
             {
                 ErrorProvider.SetError(SexoComboBox, "Debes llenar este campo");
-                Validar = true;
+                Validar = false;
             }
 
-            if (string.IsNullOrWhiteSpace(CedulaMaskedTextBox.Text))
+            if (string.IsNullOrWhiteSpace(CedulaMaskedTextBox.Text.Replace("-","")))
             {
                 ErrorProvider.SetError(CedulaMaskedTextBox, "Debes llenar este campo");
-                Validar = true;
+                Validar = false;
             }
 
             if (string.IsNullOrWhiteSpace(DireccionTextBox.Text))
             {
                 ErrorProvider.SetError(DireccionTextBox, "Debes llenar este campo");
-                Validar = true;
+                Validar = false;
             }
 
-            if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text))
+            if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text.Replace("-","")))
             {
                 ErrorProvider.SetError(TelefonoMaskedTextBox, "Debes llenar este campo");
-                Validar = true;
+                Validar = false;
             }
 
             return Validar;
+        }
+
+        private bool ExisteEnLaBaseDeDatos()
+        {
+            Clientes clientes = ClientesBLL.Buscar(Convert.ToInt32(ClienteIdNumericUpDown.Value));
+            return (clientes != null);
         }
 
 
@@ -133,36 +140,36 @@ namespace ProyectoFinal.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-
+            Clientes clientes;
             bool paso = false;
-            Clientes clientes = new Clientes();
-
-            if (Validar())
-            {
-                MessageBox.Show("Llenar todos los campos marcados");
+            if (!Validar())
                 return;
-            }
 
-            ErrorProvider.Clear();
-
-            clientes = LlenarClase();
-
-            if (ClienteIdNumericUpDown.Value == 0)
-                paso = BLL.ClientesBLL.Guardar(clientes);
+            clientes = LlenaClase();
+            if (ClienteIdNumericUpDown.Value.Equals(0))
+                paso = ClientesBLL.Guardar(clientes);
             else
             {
-                int id = Convert.ToInt32(ClienteIdNumericUpDown.Value);
-                Clientes clientesd = BLL.ClientesBLL.Buscar(id);
-
-                
-                paso = BLL.ClientesBLL.Modificar(clientes);
-               
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No Puedes Modificar un Cliente que no existe, Verifique Los Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                paso = ClientesBLL.Modificar(clientes);
+                if (paso)
+                {
+                    MessageBox.Show("Cliente Modificado Exitosamente!!", "Exito!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    return;
+                }
             }
-
             if (paso)
-                MessageBox.Show("Guardado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                MessageBox.Show("Cliente Guardado Exitosamente!!", "Exito!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
             else
-                MessageBox.Show("No se pudo guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No Se Pudo Guardar!!", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 

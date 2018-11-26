@@ -254,6 +254,7 @@
             this.TipoComboBox.Name = "TipoComboBox";
             this.TipoComboBox.Size = new System.Drawing.Size(121, 21);
             this.TipoComboBox.TabIndex = 29;
+           
             // 
             // PrecioNumericUpDown
             // 

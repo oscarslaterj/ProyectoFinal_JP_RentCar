@@ -20,7 +20,6 @@ namespace ProyectoFinal.Entidades
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaRegistro{ get; set; }
 
-        public virtual List<Vehiculos> Vehiculos { get; set; }
 
         public Clientes()
         {
@@ -30,8 +29,6 @@ namespace ProyectoFinal.Entidades
             Direccion = string.Empty;
             Telefono = string.Empty;
             FechaNacimiento = DateTime.Now;
-
-            Vehiculos = new List<Vehiculos>();
         }
 
     }

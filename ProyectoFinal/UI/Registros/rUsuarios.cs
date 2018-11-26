@@ -15,7 +15,7 @@ namespace ProyectoFinal.UI.Registros
 
     public partial class rUsuarios : Form
     {
-        RepositorioBase<Usuarios> repositorio;
+
         public rUsuarios()
         {
             InitializeComponent();
@@ -24,11 +24,12 @@ namespace ProyectoFinal.UI.Registros
 
         public void LlenarCampos(Usuarios usuarios)
         {
-            usuarios.Nombre = NameUserTextBox.Text;
-            usuarios.NombreUser = UserNameTextBox.Text;
-            usuarios.Clave = PasswordMaskedTextBox.Text;
-            usuarios.ConfirmClave = ConfirmPasswordMaskedTextBox.Text;
-            usuarios.Fecha = FechaRegistroDateTimePicker.Value;
+            NameUserTextBox.Text = usuarios.Nombre;
+            UserNameTextBox.Text = usuarios.NombreUser;
+            PasswordMaskedTextBox.Text = usuarios.Clave;
+            ConfirmPasswordMaskedTextBox.Text = usuarios.ConfirmClave ;
+            FechaRegistroDateTimePicker.Value = usuarios.Fecha;
+            NivelAccesoComboBox.Text = usuarios.NivelAcceso;
         }
 
 
@@ -39,24 +40,22 @@ namespace ProyectoFinal.UI.Registros
             UserNameTextBox.Clear();
             PasswordMaskedTextBox.Clear();
             ConfirmPasswordMaskedTextBox.Clear();
-            NivelAccesoComboBox.SelectedItem = null;
-
-
+            NivelAccesoComboBox.Items.Clear();
+            LlenarComboNivel();
             ErrorProvider.Clear();
 
         }
 
         private bool ExiteEnLaBaseDeDatos()
         {
-            repositorio = new RepositorioBase<Usuarios>(new DAL.Contexto());
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuario = repositorio.Buscar((int)UserIdNumericUpDown.Value);
             return (usuario != null);
         }
 
         private void LlenarComboNivel()
         {
- 
-            NivelAccesoComboBox.Items.Clear();   
+            NivelAccesoComboBox.Items.Clear();
             NivelAccesoComboBox.Items.Add(new KeyValuePair<string, string>("Admin", "(Admin)"));
             NivelAccesoComboBox.Items.Add(new KeyValuePair<string, string>("Usuario", "(User)"));
         }
@@ -71,7 +70,7 @@ namespace ProyectoFinal.UI.Registros
             usuarios.Clave = PasswordMaskedTextBox.Text;
             usuarios.ConfirmClave = ConfirmPasswordMaskedTextBox.Text;
             usuarios.Fecha = FechaRegistroDateTimePicker.Value;
-
+            usuarios.NivelAcceso = NivelAccesoComboBox.SelectedValue.ToString();
             return usuarios;
         }
 
@@ -119,7 +118,7 @@ namespace ProyectoFinal.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Usuarios>(new DAL.Contexto());
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             bool paso = false;
             Usuarios usuario;
             if (!Validar())
@@ -149,14 +148,11 @@ namespace ProyectoFinal.UI.Registros
             {
                 MessageBox.Show("No Se Puede Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            LlenarComboNivel();
         }
-
-
-
-
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Usuarios>(new DAL.Contexto());
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             int id;
             Usuarios usuario = new Usuarios();
 
@@ -172,14 +168,14 @@ namespace ProyectoFinal.UI.Registros
             {
                 MessageBox.Show("Usuario no Exite", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            LlenarComboNivel();
         }
 
 
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Usuarios>(new DAL.Contexto());
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             int id;
             int.TryParse(UserIdNumericUpDown.Text, out id);
             if (!ExiteEnLaBaseDeDatos())
@@ -195,6 +191,7 @@ namespace ProyectoFinal.UI.Registros
             }
             else
                 MessageBox.Show("No se Pudo Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            LlenarComboNivel();
         }
 
         private void UserNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
