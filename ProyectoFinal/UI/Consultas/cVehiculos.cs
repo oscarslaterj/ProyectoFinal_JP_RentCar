@@ -19,7 +19,7 @@ namespace ProyectoFinal.UI.Consultas
         public cVehiculos()
         {
             InitializeComponent();
-            //FiltroComboBox.SelectedIndex = 0;//Seleccionamos por default el Campo "Todos" de nuestro ComboBox
+            //>FiltroComboBox.SelectedIndex = 0;//Seleccionamos por default el Campo "Todos" de nuestro ComboBox
         }
 
         private bool Validar()
@@ -36,17 +36,17 @@ namespace ProyectoFinal.UI.Consultas
         }
 
 
-       /* private void Seleccion()
+       private void Seleccion()
         {
-            repositorio = new RepositorioBase<Vehiculos>();
-            var lista = new List<Vehiculos>();
+            repositorio = new RepositorioBase<VehiculosDetalle>();
+            var lista = new List<VehiculosDetalle>();
             ErrorProvider.Clear();
             if (CriterioTextBox.Text.Trim().Length >= 0)
             {
                 switch (FiltroComboBox.SelectedIndex)
                 {
                     case 0: //Todo
-                        lista = repositorio.GetList(p => true);
+                        lista = repositorio.GetList(p => true);  
                         break;
                     case 1: //Por ID
                         if (!Validar())
@@ -81,11 +81,11 @@ namespace ProyectoFinal.UI.Consultas
             }
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = lista;
-        }*/
+        }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-           
+            Seleccion();
         }
     }
 }

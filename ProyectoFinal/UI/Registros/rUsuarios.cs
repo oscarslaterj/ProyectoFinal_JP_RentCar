@@ -70,7 +70,7 @@ namespace ProyectoFinal.UI.Registros
             usuarios.Clave = PasswordMaskedTextBox.Text;
             usuarios.ConfirmClave = ConfirmPasswordMaskedTextBox.Text;
             usuarios.Fecha = FechaRegistroDateTimePicker.Value;
-            usuarios.NivelAcceso = NivelAccesoComboBox.SelectedValue.ToString();
+            //usuarios.NivelAcceso = NivelAccesoComboBox.SelectedValue.ToString();
             return usuarios;
         }
 

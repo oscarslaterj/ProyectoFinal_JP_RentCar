@@ -103,6 +103,10 @@
             // 
             this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltroComboBox.FormattingEnabled = true;
+            this.FiltroComboBox.Items.AddRange(new object[] {
+            "Nombre",
+            "Usuario",
+            "Clave"});
             this.FiltroComboBox.Location = new System.Drawing.Point(3, 83);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(235, 21);
@@ -113,9 +117,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(0, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 24;
-            this.label1.Text = "Filtro";
+            this.label1.Text = "Filtrar Por:";
             // 
             // BuscarButton
             // 

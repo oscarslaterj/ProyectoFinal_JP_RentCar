@@ -37,10 +37,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.FailtroComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.ImprimirButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,15 +121,6 @@
             this.FailtroComboBox.Size = new System.Drawing.Size(235, 21);
             this.FailtroComboBox.TabIndex = 35;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Filtro";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -159,6 +150,15 @@
             this.ImprimirButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ImprimirButton.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Filtrar Por:";
+            // 
             // cRenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +167,7 @@
             this.BackgroundImage = global::ProyectoFinal.Properties.Resources.pkw;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(964, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CriterioTextBox);
@@ -178,7 +179,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FailtroComboBox);
-            this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "cRenta";
             this.Text = "cRenta";
@@ -198,9 +198,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox FailtroComboBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.Button ImprimirButton;
+        private System.Windows.Forms.Label label1;
     }
 }

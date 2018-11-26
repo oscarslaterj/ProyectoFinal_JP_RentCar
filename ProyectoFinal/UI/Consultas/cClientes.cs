@@ -100,7 +100,7 @@ namespace ProyectoFinal.UI.Consultas
                         break;
 
 
-                    case 7://todo
+                    case 5://todo
                         filtro = x => true;
                         break;
                 }

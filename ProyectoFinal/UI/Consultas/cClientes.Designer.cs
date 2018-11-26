@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cClientes));
-            this.label1 = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,22 +40,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.ImprimirButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Filtro";
             // 
             // FiltroComboBox
             // 
             this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltroComboBox.FormattingEnabled = true;
+            this.FiltroComboBox.Items.AddRange(new object[] {
+            "ID",
+            "Nombre",
+            "Cedula",
+            "Direccion",
+            "Telefono",
+            "Todo"});
             this.FiltroComboBox.Location = new System.Drawing.Point(11, 76);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(235, 21);
@@ -160,6 +158,15 @@
             this.ImprimirButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ImprimirButton.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Filtrar Por:";
+            // 
             // cClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,6 +175,7 @@
             this.BackgroundImage = global::ProyectoFinal.Properties.Resources.pkw;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(942, 435);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CriterioTextBox);
@@ -179,7 +187,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FiltroComboBox);
-            this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "cClientes";
             this.Text = "cClientes";
@@ -190,8 +197,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -203,5 +208,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.Button ImprimirButton;
+        private System.Windows.Forms.Label label1;
     }
 }
