@@ -85,9 +85,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 207);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 203);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.Size = new System.Drawing.Size(147, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Vehiculos Rentados";
             // 
@@ -191,7 +192,7 @@
             // 
             // AgregarDetalleButton
             // 
-            this.AgregarDetalleButton.Location = new System.Drawing.Point(746, 195);
+            this.AgregarDetalleButton.Location = new System.Drawing.Point(746, 200);
             this.AgregarDetalleButton.Name = "AgregarDetalleButton";
             this.AgregarDetalleButton.Size = new System.Drawing.Size(131, 23);
             this.AgregarDetalleButton.TabIndex = 32;
@@ -201,9 +202,9 @@
             // 
             // DetalleIDnumericUpDown
             // 
-            this.DetalleIDnumericUpDown.Location = new System.Drawing.Point(241, 198);
+            this.DetalleIDnumericUpDown.Location = new System.Drawing.Point(241, 201);
             this.DetalleIDnumericUpDown.Name = "DetalleIDnumericUpDown";
-            this.DetalleIDnumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.DetalleIDnumericUpDown.Size = new System.Drawing.Size(53, 20);
             this.DetalleIDnumericUpDown.TabIndex = 33;
             // 
             // label5
@@ -240,7 +241,7 @@
             this.PlacaTextBox.Enabled = false;
             this.PlacaTextBox.Location = new System.Drawing.Point(499, 88);
             this.PlacaTextBox.Name = "PlacaTextBox";
-            this.PlacaTextBox.Size = new System.Drawing.Size(119, 20);
+            this.PlacaTextBox.Size = new System.Drawing.Size(182, 20);
             this.PlacaTextBox.TabIndex = 42;
             // 
             // MarcaTextBox

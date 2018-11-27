@@ -71,7 +71,7 @@
             // 
             // NombresTextBox
             // 
-            this.NombresTextBox.Location = new System.Drawing.Point(107, 39);
+            this.NombresTextBox.Location = new System.Drawing.Point(123, 39);
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(214, 20);
             this.NombresTextBox.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             // DireccionTextBox
             // 
-            this.DireccionTextBox.Location = new System.Drawing.Point(107, 104);
+            this.DireccionTextBox.Location = new System.Drawing.Point(123, 104);
             this.DireccionTextBox.Name = "DireccionTextBox";
             this.DireccionTextBox.Size = new System.Drawing.Size(214, 20);
             this.DireccionTextBox.TabIndex = 3;
@@ -104,7 +104,7 @@
             // 
             // TelefonoMaskedTextBox
             // 
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(107, 200);
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(123, 200);
             this.TelefonoMaskedTextBox.Mask = "000-000-0000";
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
             this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(118, 20);
@@ -123,7 +123,7 @@
             // 
             this.FechaNacimientoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaNacimientoDateTimePicker.Location = new System.Drawing.Point(107, 168);
+            this.FechaNacimientoDateTimePicker.Location = new System.Drawing.Point(123, 168);
             this.FechaNacimientoDateTimePicker.Name = "FechaNacimientoDateTimePicker";
             this.FechaNacimientoDateTimePicker.Size = new System.Drawing.Size(118, 20);
             this.FechaNacimientoDateTimePicker.TabIndex = 7;
@@ -139,7 +139,7 @@
             // 
             // CedulaMaskedTextBox
             // 
-            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(107, 136);
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(123, 136);
             this.CedulaMaskedTextBox.Mask = "999-9999999-9";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(118, 20);
@@ -156,7 +156,7 @@
             // 
             // ClienteIdNumericUpDown
             // 
-            this.ClienteIdNumericUpDown.Location = new System.Drawing.Point(107, 7);
+            this.ClienteIdNumericUpDown.Location = new System.Drawing.Point(123, 7);
             this.ClienteIdNumericUpDown.Name = "ClienteIdNumericUpDown";
             this.ClienteIdNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.ClienteIdNumericUpDown.TabIndex = 11;
@@ -223,7 +223,7 @@
             // 
             this.FechaRegistroDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaRegistroDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(107, 232);
+            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(123, 232);
             this.FechaRegistroDateTimePicker.Name = "FechaRegistroDateTimePicker";
             this.FechaRegistroDateTimePicker.Size = new System.Drawing.Size(118, 20);
             this.FechaRegistroDateTimePicker.TabIndex = 19;
@@ -233,7 +233,7 @@
             this.BuscarButton.BackColor = System.Drawing.Color.White;
             this.BuscarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(337, 7);
+            this.BuscarButton.Location = new System.Drawing.Point(366, 7);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(91, 35);
             this.BuscarButton.TabIndex = 20;
@@ -254,7 +254,7 @@
             // SexoComboBox
             // 
             this.SexoComboBox.FormattingEnabled = true;
-            this.SexoComboBox.Location = new System.Drawing.Point(107, 71);
+            this.SexoComboBox.Location = new System.Drawing.Point(123, 71);
             this.SexoComboBox.Name = "SexoComboBox";
             this.SexoComboBox.Size = new System.Drawing.Size(121, 21);
             this.SexoComboBox.TabIndex = 22;
