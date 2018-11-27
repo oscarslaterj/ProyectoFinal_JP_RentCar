@@ -21,7 +21,7 @@ namespace ProyectoFinal
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuarios registrousuarios = new rUsuarios();
+             rUsuarios registrousuarios = new rUsuarios();
             registrousuarios.MdiParent = this;
             registrousuarios.Show();
         }
