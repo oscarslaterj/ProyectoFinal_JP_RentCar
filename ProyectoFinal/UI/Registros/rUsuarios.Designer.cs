@@ -46,10 +46,11 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.NivelAccesoComboBox = new System.Windows.Forms.ComboBox();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.FechaRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.UsuarioRadioButton = new System.Windows.Forms.RadioButton();
+            this.AdministradorRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.UserIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
@@ -215,14 +216,6 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Nivel de Acceso";
             // 
-            // NivelAccesoComboBox
-            // 
-            this.NivelAccesoComboBox.FormattingEnabled = true;
-            this.NivelAccesoComboBox.Location = new System.Drawing.Point(130, 44);
-            this.NivelAccesoComboBox.Name = "NivelAccesoComboBox";
-            this.NivelAccesoComboBox.Size = new System.Drawing.Size(160, 21);
-            this.NivelAccesoComboBox.TabIndex = 23;
-            // 
             // ErrorProvider
             // 
             this.ErrorProvider.ContainerControl = this;
@@ -245,6 +238,28 @@
             this.FechaRegistroDateTimePicker.Size = new System.Drawing.Size(160, 20);
             this.FechaRegistroDateTimePicker.TabIndex = 25;
             // 
+            // UsuarioRadioButton
+            // 
+            this.UsuarioRadioButton.AutoSize = true;
+            this.UsuarioRadioButton.Location = new System.Drawing.Point(130, 46);
+            this.UsuarioRadioButton.Name = "UsuarioRadioButton";
+            this.UsuarioRadioButton.Size = new System.Drawing.Size(61, 17);
+            this.UsuarioRadioButton.TabIndex = 26;
+            this.UsuarioRadioButton.TabStop = true;
+            this.UsuarioRadioButton.Text = "Usuario";
+            this.UsuarioRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // AdministradorRadioButton
+            // 
+            this.AdministradorRadioButton.AutoSize = true;
+            this.AdministradorRadioButton.Location = new System.Drawing.Point(197, 47);
+            this.AdministradorRadioButton.Name = "AdministradorRadioButton";
+            this.AdministradorRadioButton.Size = new System.Drawing.Size(88, 17);
+            this.AdministradorRadioButton.TabIndex = 27;
+            this.AdministradorRadioButton.TabStop = true;
+            this.AdministradorRadioButton.Text = "Administrador";
+            this.AdministradorRadioButton.UseVisualStyleBackColor = true;
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,9 +268,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(481, 301);
+            this.Controls.Add(this.AdministradorRadioButton);
+            this.Controls.Add(this.UsuarioRadioButton);
             this.Controls.Add(this.FechaRegistroDateTimePicker);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.NivelAccesoComboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.EliminarButton);
@@ -303,9 +319,10 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox NivelAccesoComboBox;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
         private System.Windows.Forms.DateTimePicker FechaRegistroDateTimePicker;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton AdministradorRadioButton;
+        private System.Windows.Forms.RadioButton UsuarioRadioButton;
     }
 }

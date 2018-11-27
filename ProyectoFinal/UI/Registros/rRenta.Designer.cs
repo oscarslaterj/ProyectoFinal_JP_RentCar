@@ -64,7 +64,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
-            this.GuardarButton = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentaIDnumericUpDown)).BeginInit();
@@ -152,7 +152,7 @@
             this.EliminarDetalleButton.Name = "EliminarDetalleButton";
             this.EliminarDetalleButton.Size = new System.Drawing.Size(117, 23);
             this.EliminarDetalleButton.TabIndex = 29;
-            this.EliminarDetalleButton.Text = "Eliminar";
+            this.EliminarDetalleButton.Text = "Eliminar Vehiculo";
             this.EliminarDetalleButton.UseVisualStyleBackColor = false;
             this.EliminarDetalleButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
@@ -180,7 +180,7 @@
             this.RentarButton.BackColor = System.Drawing.Color.White;
             this.RentarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RentarButton.Image = ((System.Drawing.Image)(resources.GetObject("RentarButton.Image")));
-            this.RentarButton.Location = new System.Drawing.Point(733, 11);
+            this.RentarButton.Location = new System.Drawing.Point(745, 11);
             this.RentarButton.Name = "RentarButton";
             this.RentarButton.Size = new System.Drawing.Size(144, 85);
             this.RentarButton.TabIndex = 28;
@@ -195,7 +195,7 @@
             this.AgregarDetalleButton.Name = "AgregarDetalleButton";
             this.AgregarDetalleButton.Size = new System.Drawing.Size(131, 23);
             this.AgregarDetalleButton.TabIndex = 32;
-            this.AgregarDetalleButton.Text = "Agregar Carro";
+            this.AgregarDetalleButton.Text = "Agregar Vehiculo";
             this.AgregarDetalleButton.UseVisualStyleBackColor = true;
             this.AgregarDetalleButton.Click += new System.EventHandler(this.AgregarDetalleButton_Click);
             // 
@@ -375,7 +375,7 @@
             this.NuevoButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.NuevoButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
-            this.NuevoButton.Location = new System.Drawing.Point(272, 493);
+            this.NuevoButton.Location = new System.Drawing.Point(360, 493);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(89, 52);
             this.NuevoButton.TabIndex = 52;
@@ -384,18 +384,15 @@
             this.NuevoButton.UseVisualStyleBackColor = false;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
-            // GuardarButton
+            // label14
             // 
-            this.GuardarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.GuardarButton.BackColor = System.Drawing.Color.White;
-            this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
-            this.GuardarButton.Location = new System.Drawing.Point(378, 493);
-            this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(89, 52);
-            this.GuardarButton.TabIndex = 51;
-            this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.GuardarButton.UseVisualStyleBackColor = false;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(19, 484);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 16);
+            this.label14.TabIndex = 54;
+            this.label14.Text = "Total: ";
             // 
             // rRenta
             // 
@@ -403,9 +400,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(901, 555);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
-            this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.AnioTextBox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.PrecioNumericUpDown);
@@ -486,6 +483,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button NuevoButton;
-        private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -273,7 +273,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(415, 334);
+            this.ClientSize = new System.Drawing.Size(404, 334);
             this.Controls.Add(this.PrecioNumericUpDown);
             this.Controls.Add(this.TipoComboBox);
             this.Controls.Add(this.label9);

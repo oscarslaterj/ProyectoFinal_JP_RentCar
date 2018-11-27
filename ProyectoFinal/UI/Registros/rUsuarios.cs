@@ -19,7 +19,6 @@ namespace ProyectoFinal.UI.Registros
         public rUsuarios()
         {
             InitializeComponent();
-            LlenarComboNivel();
         }
 
         public void LlenarCampos(Usuarios usuarios)
@@ -29,7 +28,7 @@ namespace ProyectoFinal.UI.Registros
             PasswordMaskedTextBox.Text = usuarios.Clave;
             ConfirmPasswordMaskedTextBox.Text = usuarios.ConfirmClave ;
             FechaRegistroDateTimePicker.Value = usuarios.Fecha;
-            NivelAccesoComboBox.Text = usuarios.NivelAcceso;
+           
         }
 
 
@@ -39,9 +38,7 @@ namespace ProyectoFinal.UI.Registros
             NameUserTextBox.Clear();
             UserNameTextBox.Clear();
             PasswordMaskedTextBox.Clear();
-            ConfirmPasswordMaskedTextBox.Clear();
-            NivelAccesoComboBox.Items.Clear();
-            LlenarComboNivel();
+            ConfirmPasswordMaskedTextBox.Clear();  
             ErrorProvider.Clear();
 
         }
@@ -51,13 +48,6 @@ namespace ProyectoFinal.UI.Registros
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuario = repositorio.Buscar((int)UserIdNumericUpDown.Value);
             return (usuario != null);
-        }
-
-        private void LlenarComboNivel()
-        {
-            NivelAccesoComboBox.Items.Clear();
-            NivelAccesoComboBox.Items.Add(new KeyValuePair<string, string>("Admin", "(Admin)"));
-            NivelAccesoComboBox.Items.Add(new KeyValuePair<string, string>("Usuario", "(User)"));
         }
 
 
@@ -98,11 +88,11 @@ namespace ProyectoFinal.UI.Registros
                 ErrorProvider.SetError(ConfirmPasswordMaskedTextBox, "Campo Vacio");
                 paso = false;
             }
-            if (string.IsNullOrWhiteSpace(NivelAccesoComboBox.Text))
+           /* if (string.IsNullOrWhiteSpace(NivelAccesoComboBox.Text))
             {
                 ErrorProvider.SetError(NivelAccesoComboBox, "Campo Vacio");
                 paso = false;
-            }
+            }*/
 
 
             return paso;
@@ -148,7 +138,7 @@ namespace ProyectoFinal.UI.Registros
             {
                 MessageBox.Show("No Se Puede Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            LlenarComboNivel();
+            
         }
         private void BuscarButton_Click(object sender, EventArgs e)
         {
@@ -168,7 +158,7 @@ namespace ProyectoFinal.UI.Registros
             {
                 MessageBox.Show("Usuario no Exite", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LlenarComboNivel();
+            
         }
 
 
@@ -191,7 +181,7 @@ namespace ProyectoFinal.UI.Registros
             }
             else
                 MessageBox.Show("No se Pudo Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            LlenarComboNivel();
+            
         }
 
         private void UserNameTextBox_KeyPress(object sender, KeyPressEventArgs e)

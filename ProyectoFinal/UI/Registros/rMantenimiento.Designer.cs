@@ -44,6 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.FechaRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.EliminarDetalleButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,7 +118,7 @@
             // 
             this.EliminarButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
-            this.EliminarButton.Location = new System.Drawing.Point(351, 344);
+            this.EliminarButton.Location = new System.Drawing.Point(350, 369);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(89, 52);
             this.EliminarButton.TabIndex = 30;
@@ -129,7 +130,7 @@
             // 
             this.NuevoButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
-            this.NuevoButton.Location = new System.Drawing.Point(138, 344);
+            this.NuevoButton.Location = new System.Drawing.Point(137, 369);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(89, 52);
             this.NuevoButton.TabIndex = 29;
@@ -141,7 +142,7 @@
             // 
             this.GuardarButton.BackColor = System.Drawing.Color.White;
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
-            this.GuardarButton.Location = new System.Drawing.Point(244, 344);
+            this.GuardarButton.Location = new System.Drawing.Point(243, 369);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(89, 52);
             this.GuardarButton.TabIndex = 28;
@@ -185,13 +186,23 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(334, 81);
+            this.button1.Location = new System.Drawing.Point(459, 143);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 39);
             this.button1.TabIndex = 34;
             this.button1.Text = "Agregar";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // EliminarDetalleButton
+            // 
+            this.EliminarDetalleButton.BackColor = System.Drawing.Color.Red;
+            this.EliminarDetalleButton.Location = new System.Drawing.Point(459, 344);
+            this.EliminarDetalleButton.Name = "EliminarDetalleButton";
+            this.EliminarDetalleButton.Size = new System.Drawing.Size(117, 23);
+            this.EliminarDetalleButton.TabIndex = 35;
+            this.EliminarDetalleButton.Text = "Eliminar";
+            this.EliminarDetalleButton.UseVisualStyleBackColor = false;
             // 
             // rMantenimiento
             // 
@@ -200,7 +211,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::ProyectoFinal.Properties.Resources.pkw;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(601, 399);
+            this.ClientSize = new System.Drawing.Size(605, 423);
+            this.Controls.Add(this.EliminarDetalleButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.FechaRegistroDateTimePicker);
             this.Controls.Add(this.label5);
@@ -243,5 +255,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker FechaRegistroDateTimePicker;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button EliminarDetalleButton;
     }
 }
