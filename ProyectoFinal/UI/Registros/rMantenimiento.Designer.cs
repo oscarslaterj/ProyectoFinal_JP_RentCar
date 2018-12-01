@@ -76,10 +76,11 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(118, 22);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 21);
+            this.comboBox1.Size = new System.Drawing.Size(245, 21);
             this.comboBox1.TabIndex = 3;
             // 
             // label3
@@ -95,7 +96,7 @@
             // 
             this.TallerTextBox.Location = new System.Drawing.Point(118, 57);
             this.TallerTextBox.Name = "TallerTextBox";
-            this.TallerTextBox.Size = new System.Drawing.Size(178, 20);
+            this.TallerTextBox.Size = new System.Drawing.Size(245, 20);
             this.TallerTextBox.TabIndex = 5;
             // 
             // label4
@@ -111,7 +112,7 @@
             // 
             this.ConceptoTextBox.Location = new System.Drawing.Point(118, 91);
             this.ConceptoTextBox.Name = "ConceptoTextBox";
-            this.ConceptoTextBox.Size = new System.Drawing.Size(178, 20);
+            this.ConceptoTextBox.Size = new System.Drawing.Size(245, 20);
             this.ConceptoTextBox.TabIndex = 7;
             // 
             // EliminarButton
@@ -155,7 +156,7 @@
             this.BuscarButton.BackColor = System.Drawing.Color.White;
             this.BuscarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(334, 22);
+            this.BuscarButton.Location = new System.Drawing.Point(407, 22);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(106, 39);
             this.BuscarButton.TabIndex = 31;
@@ -176,7 +177,7 @@
             // 
             this.FechaRegistroDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaRegistroDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(118, 125);
+            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(118, 120);
             this.FechaRegistroDateTimePicker.Name = "FechaRegistroDateTimePicker";
             this.FechaRegistroDateTimePicker.Size = new System.Drawing.Size(118, 20);
             this.FechaRegistroDateTimePicker.TabIndex = 33;
