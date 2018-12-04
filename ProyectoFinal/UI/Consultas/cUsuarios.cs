@@ -26,83 +26,37 @@ namespace ProyectoFinal.UI.Consultas
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            var listado = new List<Usuarios>();
             RepositorioBase<Usuarios> repositorioBase = new RepositorioBase<Usuarios>();
-            if (CriterioTextBox.Text.Trim().Length > 0)
+            switch (FiltroComboBox.SelectedIndex)
             {
+                case 0://Id                  
+                    int id = (string.IsNullOrWhiteSpace(CriterioTextBox.Text)) ? 0 : Convert.ToInt32(CriterioTextBox.Text);
+                    filtro = x => x.UsuarioId == id && ((x.Fecha >= DesdeDateTimePicker.Value) && (x.Fecha <= HastaDateTimePicker.Value));
+                    break;
 
+                case 1://Nombre                  
+                    filtro = x => x.Nombre.Contains(CriterioTextBox.Text) && ((x.Fecha >= DesdeDateTimePicker.Value) && (x.Fecha <= HastaDateTimePicker.Value));
+                    break;
 
-                switch (FiltroComboBox.SelectedIndex)
-                {
-                    case 0://Id
+                case 2://Nombre usuario                  
+                    filtro = x => x.NombreUser.Contains(CriterioTextBox.Text) && ((x.Fecha >= DesdeDateTimePicker.Value) && (x.Fecha <= HastaDateTimePicker.Value));
+                    break;
 
+                case 3://Clave                  
+                    filtro = x => x.Clave.Contains(CriterioTextBox.Text) && ((x.Fecha >= DesdeDateTimePicker.Value) && (x.Fecha <= HastaDateTimePicker.Value));
+                    break;
 
-                        {
-                            int id = Convert.ToInt32(CriterioTextBox.Text);
-                            listado = repositorioBase.GetList(p => p.UsuarioId == id);
+                case 4://Nivel de acceso      
+                    filtro = x => x.NivelAcceso.Equals(CriterioTextBox.Text) && ((x.Fecha >= DesdeDateTimePicker.Value) && (x.Fecha <= HastaDateTimePicker.Value));
+                    break;
 
-                            if (repositorioBase.GetList(filtro).Count() == 0)
-                            {
-                                MessageBox.Show("Este Usuario no Exite", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                            break;
-                        }
-
-                    case 1://nombre
-
-
-                        {
-                            listado = repositorioBase.GetList(p => p.Nombre.Contains(CriterioTextBox.Text));
-                            if (repositorioBase.GetList(filtro).Count() == 0)
-                            {
-                                MessageBox.Show("Nombre no exite", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                            break;
-                        }
-                    case 2: //Usuario
-
-                        {
-                            listado = repositorioBase.GetList(p => p.NombreUser.Contains(CriterioTextBox.Text));
-                            if (repositorioBase.GetList(filtro).Count() == 0)
-                            {
-                                MessageBox.Show("Usuario no exite", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                            break;
-
-
-                        }
-                    case 3://Clave
-
-                        {
-                            listado = repositorioBase.GetList(p => p.Clave.Contains(CriterioTextBox.Text));
-                            if (repositorioBase.GetList(filtro).Count() == 0)
-                            {
-
-                                MessageBox.Show("Clave no exite", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                        }
-                        break;
-
-
-
-
-
-
-                    case 4://todo
-                        filtro = x => true;
-                        break;
-                }
+                default:
+                    filtro = x => true;
+                    break;
             }
-            else
-            {
-                listado = repositorioBase.GetList(p => true);
-            }
+
             ConsultaDataGridView.DataSource = null;
-            ConsultaDataGridView.DataSource = listado;
+            ConsultaDataGridView.DataSource = repositorioBase.GetList(filtro);
             CriterioTextBox.Clear();
            
         }
@@ -110,7 +64,7 @@ namespace ProyectoFinal.UI.Consultas
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
-            ReporteUsers reporte = new ReporteUsers(repositorio);
+            ReporteUsers reporte = new ReporteUsers(repositorio.GetList(filtro));
             reporte.Show();
         }
     }

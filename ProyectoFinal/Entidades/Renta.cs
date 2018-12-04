@@ -10,7 +10,7 @@ namespace ProyectoFinal.Entidades
     public class Renta
     {
         [Key]
-        public int RentaID { get; set; }
+        public int RentaId { get; set; }
         public DateTime FechaRegistro { get; set; }
         public DateTime FechaDevuelta { get; set; }
 
@@ -18,7 +18,7 @@ namespace ProyectoFinal.Entidades
 
         public Renta()
         {
-            RentaID = 0;
+            RentaId = 0;
             FechaRegistro = DateTime.Now;
             FechaDevuelta = DateTime.Now;
 

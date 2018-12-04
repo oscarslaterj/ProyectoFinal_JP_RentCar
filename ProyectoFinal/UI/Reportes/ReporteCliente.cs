@@ -1,6 +1,4 @@
-﻿using ProyectoFinal.BLL;
-using ProyectoFinal.Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,22 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoFinal.Entidades;
 
 namespace ProyectoFinal.UI.Reportes
 {
-    public partial class ReporteUsers : Form
+    public partial class ReporteCliente : Form
     {
-        List<Usuarios> list = new List<Usuarios>();
-        public ReporteUsers(List<Usuarios> lista)
+        List<Clientes> lista = new List<Clientes>();
+
+        public ReporteCliente(List<Clientes> lista)
         {
             InitializeComponent();
-            list = lista;
+            this.lista = lista;
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            ReporteUsuarios reporte = new ReporteUsuarios();
-            reporte.SetDataSource(list);
+            ReporteClientes reporte = new ReporteClientes();
+            reporte.SetDataSource(lista);
             crystalReportViewer1.ReportSource = reporte;
             crystalReportViewer1.Refresh();
         }

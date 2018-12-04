@@ -10,9 +10,10 @@ namespace ProyectoFinal.Entidades
     public class RentasDetalle
     {
         [Key]
-        public int IdDetalle { get; set; }
-        public int IdVehiculo { get; set; }
-        public int IdRenta { get; set; }
+        public int DetalleId { get; set; }
+        public int ClienteId { get; set; }
+        public int VehiculoId { get; set; }
+        public int RentaId { get; set; }
         public String Año { get; set; }
         public String Marca { get; set; }
         public String Modelo { get; set; }
@@ -20,20 +21,22 @@ namespace ProyectoFinal.Entidades
 
         public RentasDetalle()
         {
-            IdDetalle = 0;
-            IdVehiculo = 0;
-            IdRenta = 0;
+            DetalleId = 0;
+            ClienteId = 0;
+            VehiculoId = 0;
+            RentaId = 0;
             Año = string.Empty;
             Marca = string.Empty;
             Modelo = string.Empty;
             Precio = 0;
         }
 
-       public RentasDetalle(int idDetalle, int idVehiculo, int idRenta, string año, string marca, string modelo, decimal precio)
+       public RentasDetalle(int idDetalle, int idcliente, int idVehiculo, int idRenta, string año, string marca, string modelo, decimal precio)
         {
-            IdDetalle = idDetalle;
-            IdVehiculo = idVehiculo;
-            IdRenta = idRenta;
+            DetalleId = idDetalle;
+            ClienteId = idcliente;
+            VehiculoId = idVehiculo;
+            RentaId = idRenta;
             Año = año;
             Marca = marca;
             Modelo = modelo;

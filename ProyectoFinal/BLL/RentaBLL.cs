@@ -38,13 +38,13 @@ namespace ProyectoFinal.BLL
             Contexto db = new Contexto();
             try
             {
-                var Anterior = db.Renta.Find(renta.RentaID);
+                var Anterior = db.Renta.Find(renta.RentaId);
                 db.Entry(renta).State = EntityState.Modified;
                 foreach (var item in Anterior.Detalle)
                 {
                     /*if (!renta.Vehiculos.Exists(d => d.VehiculoID== item.VehiculoID))
                         db.Entry(item).State = EntityState.Deleted;*/
-                    if (item.IdVehiculo == 0)
+                    if (item.VehiculoId == 0)
                         guardarDetalle(item);
                     else
                     {

@@ -12,7 +12,7 @@ namespace ProyectoFinal.DAL
     {
         public DbSet<Clientes> Clientes{ get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
-        public DbSet<VehiculosDetalle> Vehiculos { get; set; }
+        public DbSet<Vehiculos> Vehiculos { get; set; }
         public DbSet<Renta> Renta{ get; set; }
         public DbSet<RentasDetalle>  Rentadetalle { get; set; }
 

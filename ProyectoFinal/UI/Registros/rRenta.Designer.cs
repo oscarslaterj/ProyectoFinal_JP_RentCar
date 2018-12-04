@@ -43,8 +43,6 @@
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
             this.RentarButton = new System.Windows.Forms.Button();
             this.AgregarDetalleButton = new System.Windows.Forms.Button();
-            this.DetalleIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
             this.RentaIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -66,7 +64,6 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalleIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentaIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
@@ -174,7 +171,7 @@
             this.ClientecomboBox.Name = "ClientecomboBox";
             this.ClientecomboBox.Size = new System.Drawing.Size(269, 21);
             this.ClientecomboBox.TabIndex = 31;
-            this.ClientecomboBox.SelectedValueChanged += new System.EventHandler(this.ClientecomboBox_SelectedValueChanged);
+            this.ClientecomboBox.SelectedIndexChanged += new System.EventHandler(this.ClientecomboBox_SelectedIndexChanged);
             // 
             // RentarButton
             // 
@@ -199,22 +196,6 @@
             this.AgregarDetalleButton.Text = "Agregar Vehiculo";
             this.AgregarDetalleButton.UseVisualStyleBackColor = true;
             this.AgregarDetalleButton.Click += new System.EventHandler(this.AgregarDetalleButton_Click);
-            // 
-            // DetalleIDnumericUpDown
-            // 
-            this.DetalleIDnumericUpDown.Location = new System.Drawing.Point(241, 201);
-            this.DetalleIDnumericUpDown.Name = "DetalleIDnumericUpDown";
-            this.DetalleIDnumericUpDown.Size = new System.Drawing.Size(53, 20);
-            this.DetalleIDnumericUpDown.TabIndex = 33;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(181, 205);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "ID Detalle";
             // 
             // RentaIDnumericUpDown
             // 
@@ -420,8 +401,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.RentaIDnumericUpDown);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.DetalleIDnumericUpDown);
             this.Controls.Add(this.AgregarDetalleButton);
             this.Controls.Add(this.ClientecomboBox);
             this.Controls.Add(this.label4);
@@ -439,7 +418,6 @@
             this.Name = "rRenta";
             this.Text = "rRenta";
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalleIDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentaIDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
@@ -463,8 +441,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox ClientecomboBox;
         private System.Windows.Forms.Button AgregarDetalleButton;
-        private System.Windows.Forms.NumericUpDown DetalleIDnumericUpDown;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown RentaIDnumericUpDown;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ErrorProvider ErrorProvider;

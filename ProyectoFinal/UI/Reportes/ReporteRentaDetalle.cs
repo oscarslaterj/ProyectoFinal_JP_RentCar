@@ -13,8 +13,8 @@ namespace ProyectoFinal.UI.Reportes
 {
     public partial class ReporteRentaDetalle : Form
     {
-        List<RentasDetalle> data = new List<RentasDetalle>();
-        public ReporteRentaDetalle(List<RentasDetalle> lista)
+        List<Renta> data = new List<Renta>();
+        public ReporteRentaDetalle(List<Renta> lista)
         {
             InitializeComponent();
             data = lista;
@@ -26,8 +26,6 @@ namespace ProyectoFinal.UI.Reportes
             reporteRenta.SetDataSource(data);
             crystalReportViewer1.ReportSource = reporteRenta;
             crystalReportViewer1.Refresh();
-
-
         }
     }
 }

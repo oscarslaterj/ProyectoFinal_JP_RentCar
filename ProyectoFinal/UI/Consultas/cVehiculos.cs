@@ -1,5 +1,7 @@
 ﻿using ProyectoFinal.BLL;
 using ProyectoFinal.Entidades;
+using ProyectoFinal.UI.Reportes;
+using ProyectoFinal.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +17,10 @@ namespace ProyectoFinal.UI.Consultas
 {
     public partial class cVehiculos : Form
     {
-        RepositorioBase<VehiculosDetalle> repositorio;
+        Expression<Func<Vehiculos, bool>> filtro = x => true;
         public cVehiculos()
         {
             InitializeComponent();
-            //>FiltroComboBox.SelectedIndex = 0;//Seleccionamos por default el Campo "Todos" de nuestro ComboBox
         }
 
         private bool Validar()
@@ -38,54 +39,63 @@ namespace ProyectoFinal.UI.Consultas
 
        private void Seleccion()
         {
-            repositorio = new RepositorioBase<VehiculosDetalle>();
-            var lista = new List<VehiculosDetalle>();
-            ErrorProvider.Clear();
-            if (CriterioTextBox.Text.Trim().Length >= 0)
+            RepositorioBase<Vehiculos> repositorioBase = new RepositorioBase<Vehiculos>();
+            switch (FiltroComboBox.SelectedIndex)
             {
-                switch (FiltroComboBox.SelectedIndex)
-                {
-                    case 0: //Todo
-                        lista = repositorio.GetList(p => true);  
-                        break;
-                    case 1: //Por ID
-                        if (!Validar())
-                            return;
-                        int id = Convert.ToInt32(CriterioTextBox.Text);
-                        lista = repositorio.GetList(p => p.VehiculoID == id);
-                        break;
-                    case 2://Por Marca
-                        if (!Validar())
-                            return;
-                        lista = repositorio.GetList(p => p.Marca.Contains(CriterioTextBox.Text));
-                        break;
-                    case 3://Por Precio
-                        if (!Validar())
-                            return;
-                        Decimal precio = Convert.ToDecimal(CriterioTextBox.Text);
-                        lista = repositorio.GetList(p => p.PrecioRenta == precio);
-                        break;
-                    case 4://Por Modelo
-                        if (!Validar())
-                            return;
-                        lista = repositorio.GetList(p => p.Modelo.Contains(CriterioTextBox.Text));
-                        break;
-                    case 5: // Por Placa
-                        if (!Validar())
-                            return;
-                        lista = repositorio.GetList(p => p.Placa.Contains(CriterioTextBox.Text));
-                        break;
-                }
+                case 0://Id                  
+                    int id = (string.IsNullOrWhiteSpace(CriterioTextBox.Text)) ? 0 : Convert.ToInt32(CriterioTextBox.Text);
+                    filtro = x => x.VehiculoId == id && ((x.FechaRegistro >= DesdeDateTimePicker.Value) && (x.FechaRegistro <= HastaDateTimePicker.Value));
+                    break;
 
-                lista = lista.Where(c => c.FechaRegistro.Date >= DesdeDateTimePicker.Value.Date && c.FechaRegistro.Date <= HastaDateTimePicker.Value.Date).ToList();
+                case 1://Placa                  
+                    filtro = x => x.Placa.Contains(CriterioTextBox.Text) && ((x.FechaRegistro >= DesdeDateTimePicker.Value) && (x.FechaRegistro <= HastaDateTimePicker.Value));
+                    break;
+
+                case 2://Tipo                 
+                    filtro = x => x.Tipo.Contains(CriterioTextBox.Text) && ((x.FechaRegistro >= DesdeDateTimePicker.Value) && (x.FechaRegistro <= HastaDateTimePicker.Value));
+                    break;
+
+                case 3://Marca                  
+                    filtro = x => x.Marca.Contains(CriterioTextBox.Text) && ((x.FechaRegistro >= DesdeDateTimePicker.Value) && (x.FechaRegistro <= HastaDateTimePicker.Value));
+                    break;
+
+                case 4://Modelo                  
+                    filtro = x => x.Modelo.Contains(CriterioTextBox.Text) && ((x.FechaRegistro >= DesdeDateTimePicker.Value) && (x.FechaRegistro <= HastaDateTimePicker.Value));
+                    break;
+
+                case 5://Año                  
+                    filtro = x => x.Anio.Contains(CriterioTextBox.Text) && ((x.FechaRegistro >= DesdeDateTimePicker.Value) && (x.FechaRegistro <= HastaDateTimePicker.Value));
+                    break;
+
+                case 6://Descripcion                  
+                    filtro = x => x.Descripcion.Contains(CriterioTextBox.Text) && ((x.FechaRegistro >= DesdeDateTimePicker.Value) && (x.FechaRegistro <= HastaDateTimePicker.Value));
+                    break;
+
+                case 7://Marca             
+                    decimal renta = (string.IsNullOrWhiteSpace(CriterioTextBox.Text)) ? 0 : decimal.Parse(CriterioTextBox.Text);
+                    filtro = x => x.PrecioRenta <= renta && ((x.FechaRegistro >= DesdeDateTimePicker.Value) && (x.FechaRegistro <= HastaDateTimePicker.Value));
+                    break;
+
+                default:
+                    filtro = x => true;
+                    break;
             }
+
             ConsultaDataGridView.DataSource = null;
-            ConsultaDataGridView.DataSource = lista;
+            ConsultaDataGridView.DataSource = repositorioBase.GetList(filtro);
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             Seleccion();
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
+            ReporteVehiculo ventana = new ReporteVehiculo(repositorio.GetList(x => true));
+            ventana.Show();
+            
         }
     }
 }

@@ -36,7 +36,7 @@
             this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.FailtroComboBox = new System.Windows.Forms.ComboBox();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.ImprimirButton = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = false;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click_1);
             // 
             // label4
             // 
@@ -112,14 +113,18 @@
             this.label2.TabIndex = 36;
             this.label2.Text = "Desde";
             // 
-            // FailtroComboBox
+            // FiltroComboBox
             // 
-            this.FailtroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.FailtroComboBox.FormattingEnabled = true;
-            this.FailtroComboBox.Location = new System.Drawing.Point(9, 81);
-            this.FailtroComboBox.Name = "FailtroComboBox";
-            this.FailtroComboBox.Size = new System.Drawing.Size(235, 21);
-            this.FailtroComboBox.TabIndex = 35;
+            this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FiltroComboBox.FormattingEnabled = true;
+            this.FiltroComboBox.Items.AddRange(new object[] {
+            "RentaID",
+            "Fecha devuelta",
+            "Todo"});
+            this.FiltroComboBox.Location = new System.Drawing.Point(5, 81);
+            this.FiltroComboBox.Name = "FiltroComboBox";
+            this.FiltroComboBox.Size = new System.Drawing.Size(235, 21);
+            this.FiltroComboBox.TabIndex = 35;
             // 
             // label5
             // 
@@ -149,6 +154,7 @@
             this.ImprimirButton.Text = "Imprimir";
             this.ImprimirButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ImprimirButton.UseVisualStyleBackColor = false;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
             // 
             // label1
             // 
@@ -178,7 +184,7 @@
             this.Controls.Add(this.DesdeDateTimePicker);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.FailtroComboBox);
+            this.Controls.Add(this.FiltroComboBox);
             this.DoubleBuffered = true;
             this.Name = "cRenta";
             this.Text = "cRenta";
@@ -197,7 +203,7 @@
         private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox FailtroComboBox;
+        private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.Button ImprimirButton;

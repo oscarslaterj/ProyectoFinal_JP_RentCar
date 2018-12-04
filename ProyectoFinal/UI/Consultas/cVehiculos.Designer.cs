@@ -61,7 +61,7 @@
             // 
             this.ConsultaDataGridView.BackgroundColor = System.Drawing.SystemColors.GrayText;
             this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultaDataGridView.Location = new System.Drawing.Point(3, 107);
+            this.ConsultaDataGridView.Location = new System.Drawing.Point(12, 101);
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
             this.ConsultaDataGridView.Size = new System.Drawing.Size(799, 222);
             this.ConsultaDataGridView.TabIndex = 31;
@@ -164,6 +164,7 @@
             this.ImprimirButton.Text = "Imprimir";
             this.ImprimirButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ImprimirButton.UseVisualStyleBackColor = false;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
             // 
             // label1
             // 

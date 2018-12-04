@@ -104,9 +104,12 @@
             this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Items.AddRange(new object[] {
+            "UsuarioID",
             "Nombre",
-            "Usuario",
-            "Clave"});
+            "Nombre Usuario",
+            "Clave",
+            "Nivel Acceso",
+            "Todo"});
             this.FiltroComboBox.Location = new System.Drawing.Point(3, 83);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(235, 21);

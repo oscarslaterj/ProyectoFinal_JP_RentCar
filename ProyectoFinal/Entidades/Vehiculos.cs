@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Entidades
 {
-   public class VehiculosDetalle
+   public class Vehiculos
     {
         [Key]
 
-        public int VehiculoID { get; set; }
+        public int VehiculoId { get; set; }
         public string Placa { get; set; }
         public string Tipo { get; set; }
         public string Marca { get; set; }
@@ -21,9 +21,9 @@ namespace ProyectoFinal.Entidades
         public decimal PrecioRenta { get; set; }
         public DateTime FechaRegistro { get; set; }
 
-        public VehiculosDetalle()
+        public Vehiculos()
         {
-            VehiculoID = 0;
+            VehiculoId = 0;
             Placa = string.Empty;
             Tipo = string.Empty;
             Marca = string.Empty;
@@ -35,9 +35,9 @@ namespace ProyectoFinal.Entidades
 
     }
 
-        public VehiculosDetalle(int vehiculoID, string placa, string tipo, string marca, string modelo, string anio, string descripcion, decimal precioRenta, DateTime fechaRegistro)
+        public Vehiculos(int vehiculoID, string placa, string tipo, string marca, string modelo, string anio, string descripcion, decimal precioRenta, DateTime fechaRegistro)
         {
-            VehiculoID = vehiculoID;
+            VehiculoId = vehiculoID;
             Placa = placa;
             Tipo = tipo;
             Marca = marca;

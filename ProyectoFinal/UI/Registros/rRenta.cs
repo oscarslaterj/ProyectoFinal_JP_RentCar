@@ -18,22 +18,23 @@ namespace ProyectoFinal.UI.Registros
         Renta renta = new Renta();
         public int Index { get; set; }
         List<RentasDetalle> Detalle = new List<RentasDetalle>();
-        VehiculosDetalle vehiculo;
+
         public rRenta()
         {
             InitializeComponent();
             LlenaComboBox();
-            FiltroVehiculoComboBox.SelectedIndex = 0;
         }
 
         private void LlenaComboBox()
         {
-            RepositorioBase<VehiculosDetalle> repositorio = new RepositorioBase<VehiculosDetalle>();
+            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
+           
             FiltroVehiculoComboBox.DataSource = repositorio.GetList(c => true);
             FiltroVehiculoComboBox.DisplayMember = "Modelo";
-            FiltroVehiculoComboBox.ValueMember = "VehiculoID";
+            FiltroVehiculoComboBox.ValueMember = "VehiculoId";
 
             RepositorioBase<Clientes> repository = new RepositorioBase<Clientes>();
+         
             ClientecomboBox.DataSource = repository.GetList(c => true);
             ClientecomboBox.DisplayMember = "Nombre";
             ClientecomboBox.ValueMember = "ClienteId";
@@ -42,7 +43,7 @@ namespace ProyectoFinal.UI.Registros
         private Renta LlenaClase()
         {
             Renta renta = new Renta();
-            renta.RentaID = Convert.ToInt32(RentaIDnumericUpDown.Value);
+            renta.RentaId = Convert.ToInt32(RentaIDnumericUpDown.Value);
             renta.FechaRegistro = DateTime.Now;
             renta.FechaDevuelta = DateTime.Now;
             renta.Detalle = this.Detalle;
@@ -98,21 +99,24 @@ namespace ProyectoFinal.UI.Registros
 
             //        )
             //   );
+
+            Detalle.Add(new RentasDetalle(0, ((Clientes)ClientecomboBox.SelectedItem).ClienteId, ((Vehiculos)FiltroVehiculoComboBox.SelectedItem).VehiculoId, (int)RentaIDnumericUpDown.Value, ((Vehiculos)FiltroVehiculoComboBox.SelectedItem).Anio, ((Vehiculos)FiltroVehiculoComboBox.SelectedItem).Marca
+                                            , ((Vehiculos)FiltroVehiculoComboBox.SelectedItem).Modelo, ((Vehiculos)FiltroVehiculoComboBox.SelectedItem).PrecioRenta));
             
-            if (DetalleDataGridView.DataSource != null)
+           /* if (DetalleDataGridView.DataSource != null)
             {
                 this.Detalle = (List<RentasDetalle>)DetalleDataGridView.DataSource;
             }
             if (DetalleIDnumericUpDown.Value == 0)
             {
-                this.Detalle.Add(new RentasDetalle(0, vehiculo.VehiculoID, (int)RentaIDnumericUpDown.Value, vehiculo.Anio, vehiculo.Marca
+                this.Detalle.Add(new RentasDetalle(0,ClientecomboBox.SelectedIndex ,FiltroVehiculoComboBox.SelectedIndex, (int)RentaIDnumericUpDown.Value, vehiculo.Anio, vehiculo.Marca
                             , vehiculo.Modelo, vehiculo.PrecioRenta));
             }
             else
             {
-                this.Detalle.Add(new RentasDetalle((int)DetalleIDnumericUpDown.Value, vehiculo.VehiculoID, (int)RentaIDnumericUpDown.Value, vehiculo.Anio, vehiculo.Marca
+                this.Detalle.Add(new RentasDetalle(0, ClientecomboBox.SelectedIndex, FiltroVehiculoComboBox.SelectedIndex, (int)RentaIDnumericUpDown.Value, vehiculo.Anio, vehiculo.Marca
                                             , vehiculo.Modelo, vehiculo.PrecioRenta));
-            }
+            }*/
 
 
 
@@ -153,19 +157,6 @@ namespace ProyectoFinal.UI.Registros
         }
 
 
-        private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            RepositorioBase<VehiculosDetalle> repositorio = new RepositorioBase<VehiculosDetalle>();
-            vehiculo = repositorio.Buscar(Convert.ToInt32(FiltroVehiculoComboBox.SelectedValue));
-            AnioTextBox.Text = vehiculo.Anio;
-            MarcaTextBox.Text = vehiculo.Marca;
-            ModeloTextBox.Text = vehiculo.Modelo;
-            PlacaTextBox.Text = vehiculo.Placa;
-            DescripcionTextBox.Text = vehiculo.Descripcion;
-            PrecioNumericUpDown.Value = vehiculo.PrecioRenta;
-            DateTimePickerF.Value = vehiculo.FechaRegistro;
-        }
-
         private void RentarButton_Click(object sender, EventArgs e)
         {
 
@@ -194,8 +185,8 @@ namespace ProyectoFinal.UI.Registros
                 MessageBox.Show("Guardado");
                 if (resultado == DialogResult.Yes)
                 {
-                    ReporteRentaDetalle reporte = new ReporteRentaDetalle(renta.Detalle);
-                    reporte.Show();
+                  //  ReporteRentaDetalle reporte = new ReporteRentaDetalle(renta.Detalle);
+                   // reporte.Show();
                 }
                 Limpiar();
             }
@@ -230,6 +221,19 @@ namespace ProyectoFinal.UI.Registros
                 MessageBox.Show("no se pudo guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void ClientecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
+            Vehiculos vehiculo = repositorio.Buscar(Convert.ToInt32(FiltroVehiculoComboBox.SelectedValue));
+            AnioTextBox.Text = vehiculo.Anio;
+            MarcaTextBox.Text = vehiculo.Marca;
+            ModeloTextBox.Text = vehiculo.Modelo;
+            PlacaTextBox.Text = vehiculo.Placa;
+            DescripcionTextBox.Text = vehiculo.Descripcion;
+            PrecioNumericUpDown.Value = vehiculo.PrecioRenta;
+            DateTimePickerF.Value = vehiculo.FechaRegistro;
         }
     }
 }
