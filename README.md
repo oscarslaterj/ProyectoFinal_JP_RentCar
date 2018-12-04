@@ -4,7 +4,7 @@
 Mi proyecto es llamado "JP Rent A Car"
 ```
 _Consiste en un sistema para la renta de vehiculos, diseñado para su facil uso e interacción con usuarios._
-_JP Rent A Car permite a los usarios ademas de la renta, llevar un registro de mantenimiento de los vehículos_
+_JP Rent A Car permite a los usuarios ademas de la renta, llevar un registro de mantenimiento de los vehículos_
 
 
 ## Autor ✒️
