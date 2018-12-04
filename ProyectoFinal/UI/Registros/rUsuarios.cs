@@ -19,6 +19,7 @@ namespace ProyectoFinal.UI.Registros
         public rUsuarios()
         {
             InitializeComponent();
+            AdministradorRadioButton.Checked = true;
         }
 
         public void LlenarCampos(Usuarios usuarios)
@@ -60,7 +61,6 @@ namespace ProyectoFinal.UI.Registros
             usuarios.Clave = PasswordMaskedTextBox.Text;
             usuarios.ConfirmClave = ConfirmPasswordMaskedTextBox.Text;
             usuarios.Fecha = FechaRegistroDateTimePicker.Value;
-            //usuarios.NivelAcceso = NivelAccesoComboBox.SelectedValue.ToString();
             return usuarios;
         }
 
@@ -88,11 +88,7 @@ namespace ProyectoFinal.UI.Registros
                 ErrorProvider.SetError(ConfirmPasswordMaskedTextBox, "Campo Vacio");
                 paso = false;
             }
-           /* if (string.IsNullOrWhiteSpace(NivelAccesoComboBox.Text))
-            {
-                ErrorProvider.SetError(NivelAccesoComboBox, "Campo Vacio");
-                paso = false;
-            }*/
+          
 
 
             return paso;
@@ -151,7 +147,6 @@ namespace ProyectoFinal.UI.Registros
 
             if (usuario != null)
             {
-                MessageBox.Show("Usuario Econtrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LlenarCampos(usuario);
             }
             else

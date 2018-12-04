@@ -98,10 +98,25 @@ namespace ProyectoFinal.UI.Registros
 
             //        )
             //   );
+            
             if (DetalleDataGridView.DataSource != null)
+            {
                 this.Detalle = (List<RentasDetalle>)DetalleDataGridView.DataSource;
-            this.Detalle.Add(new RentasDetalle(0, vehiculo.VehiculoID, (int)RentaIDnumericUpDown.Value, vehiculo.Anio, vehiculo.Marca
-                                , vehiculo.Modelo, vehiculo.PrecioRenta));
+            }
+            if (DetalleIDnumericUpDown.Value == 0)
+            {
+                this.Detalle.Add(new RentasDetalle(0, vehiculo.VehiculoID, (int)RentaIDnumericUpDown.Value, vehiculo.Anio, vehiculo.Marca
+                            , vehiculo.Modelo, vehiculo.PrecioRenta));
+            }
+            else
+            {
+                this.Detalle.Add(new RentasDetalle((int)DetalleIDnumericUpDown.Value, vehiculo.VehiculoID, (int)RentaIDnumericUpDown.Value, vehiculo.Anio, vehiculo.Marca
+                                            , vehiculo.Modelo, vehiculo.PrecioRenta));
+            }
+
+
+
+
             ErrorProvider.Clear();
             CargarGrid();
         }
@@ -157,9 +172,15 @@ namespace ProyectoFinal.UI.Registros
             bool paso = false;
             Renta renta = LlenaClase();
             if (RentaIDnumericUpDown.Value == 0)
-
+            {
                 paso = RentaBLL.Guardar(renta);
-
+                Clientes cliente = ClientesBLL.Buscar((int)ClientecomboBox.SelectedValue);
+                foreach(var item in Detalle)
+                {
+                    cliente.VehiculosRentados += 1;
+                }
+                ClientesBLL.Modificar(cliente);
+            }
             else
             {
                 paso = RentaBLL.Modificar(renta);

@@ -19,6 +19,7 @@ namespace ProyectoFinal.Entidades
         public string Telefono { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaRegistro{ get; set; }
+        public int VehiculosRentados { get; set; }
 
 
         public Clientes()
@@ -29,6 +30,7 @@ namespace ProyectoFinal.Entidades
             Direccion = string.Empty;
             Telefono = string.Empty;
             FechaNacimiento = DateTime.Now;
+            VehiculosRentados = 0;
         }
 
     }

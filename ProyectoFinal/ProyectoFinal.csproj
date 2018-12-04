@@ -162,6 +162,12 @@
     <Compile Include="UI\Reportes\ReporteRentaDetalle.Designer.cs">
       <DependentUpon>ReporteRentaDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ReporteUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteUsers.Designer.cs">
+      <DependentUpon>ReporteUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\ReporteUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ReporteRentaDetalle.resx">
       <DependentUpon>ReporteRentaDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteUsers.resx">
+      <DependentUpon>ReporteUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ReporteUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

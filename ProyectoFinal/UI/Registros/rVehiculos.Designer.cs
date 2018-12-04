@@ -53,6 +53,8 @@
             this.TipoComboBox = new System.Windows.Forms.ComboBox();
             this.PrecioNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.ColorComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.VehiculoNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
@@ -79,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 216);
+            this.label3.Location = new System.Drawing.Point(9, 241);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 2;
@@ -88,7 +90,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 129);
+            this.label4.Location = new System.Drawing.Point(9, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 3;
@@ -112,7 +114,7 @@
             // 
             // PlacaTextBox
             // 
-            this.PlacaTextBox.Location = new System.Drawing.Point(93, 128);
+            this.PlacaTextBox.Location = new System.Drawing.Point(93, 153);
             this.PlacaTextBox.Name = "PlacaTextBox";
             this.PlacaTextBox.Size = new System.Drawing.Size(119, 20);
             this.PlacaTextBox.TabIndex = 7;
@@ -121,7 +123,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 158);
+            this.label5.Location = new System.Drawing.Point(9, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 8;
@@ -129,7 +131,7 @@
             // 
             // AnioTextBox
             // 
-            this.AnioTextBox.Location = new System.Drawing.Point(93, 157);
+            this.AnioTextBox.Location = new System.Drawing.Point(93, 182);
             this.AnioTextBox.Name = "AnioTextBox";
             this.AnioTextBox.Size = new System.Drawing.Size(119, 20);
             this.AnioTextBox.TabIndex = 9;
@@ -137,7 +139,7 @@
             // 
             // DescripcionTextBox
             // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(93, 186);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(93, 211);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(253, 20);
             this.DescripcionTextBox.TabIndex = 11;
@@ -146,7 +148,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 187);
+            this.label6.Location = new System.Drawing.Point(9, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 10;
@@ -156,7 +158,7 @@
             // 
             this.FechaRegistroDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaRegistroDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(93, 244);
+            this.FechaRegistroDateTimePicker.Location = new System.Drawing.Point(93, 269);
             this.FechaRegistroDateTimePicker.Name = "FechaRegistroDateTimePicker";
             this.FechaRegistroDateTimePicker.Size = new System.Drawing.Size(118, 20);
             this.FechaRegistroDateTimePicker.TabIndex = 21;
@@ -164,7 +166,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 245);
+            this.label7.Location = new System.Drawing.Point(9, 270);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 20;
@@ -203,7 +205,7 @@
             // 
             this.EliminarButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
-            this.EliminarButton.Location = new System.Drawing.Point(281, 276);
+            this.EliminarButton.Location = new System.Drawing.Point(281, 304);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(89, 52);
             this.EliminarButton.TabIndex = 27;
@@ -216,7 +218,7 @@
             // 
             this.NuevoButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
-            this.NuevoButton.Location = new System.Drawing.Point(68, 276);
+            this.NuevoButton.Location = new System.Drawing.Point(68, 304);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(89, 52);
             this.NuevoButton.TabIndex = 26;
@@ -229,7 +231,7 @@
             // 
             this.GuardarButton.BackColor = System.Drawing.Color.White;
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
-            this.GuardarButton.Location = new System.Drawing.Point(174, 276);
+            this.GuardarButton.Location = new System.Drawing.Point(174, 304);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(89, 52);
             this.GuardarButton.TabIndex = 25;
@@ -257,7 +259,7 @@
             // 
             // PrecioNumericUpDown
             // 
-            this.PrecioNumericUpDown.Location = new System.Drawing.Point(93, 216);
+            this.PrecioNumericUpDown.Location = new System.Drawing.Point(93, 241);
             this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.PrecioNumericUpDown.TabIndex = 30;
@@ -266,6 +268,23 @@
             // 
             this.ErrorProvider.ContainerControl = this;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 129);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Color";
+            // 
+            // ColorComboBox
+            // 
+            this.ColorComboBox.FormattingEnabled = true;
+            this.ColorComboBox.Location = new System.Drawing.Point(92, 126);
+            this.ColorComboBox.Name = "ColorComboBox";
+            this.ColorComboBox.Size = new System.Drawing.Size(122, 21);
+            this.ColorComboBox.TabIndex = 32;
+            // 
             // rVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,7 +292,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(404, 334);
+            this.ClientSize = new System.Drawing.Size(406, 368);
+            this.Controls.Add(this.ColorComboBox);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.PrecioNumericUpDown);
             this.Controls.Add(this.TipoComboBox);
             this.Controls.Add(this.label9);
@@ -334,5 +355,7 @@
         private System.Windows.Forms.ComboBox TipoComboBox;
         private System.Windows.Forms.NumericUpDown PrecioNumericUpDown;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
+        private System.Windows.Forms.ComboBox ColorComboBox;
+        private System.Windows.Forms.Label label10;
     }
 }

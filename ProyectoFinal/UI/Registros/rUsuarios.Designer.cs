@@ -145,7 +145,7 @@
             this.GuardarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.GuardarButton.BackColor = System.Drawing.Color.White;
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
-            this.GuardarButton.Location = new System.Drawing.Point(140, 247);
+            this.GuardarButton.Location = new System.Drawing.Point(175, 246);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(89, 52);
             this.GuardarButton.TabIndex = 10;
@@ -158,7 +158,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(403, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(324, 99);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(66, 61);
             this.pictureBox1.TabIndex = 11;
@@ -169,7 +169,7 @@
             this.NuevoButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.NuevoButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
-            this.NuevoButton.Location = new System.Drawing.Point(35, 247);
+            this.NuevoButton.Location = new System.Drawing.Point(70, 246);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(89, 52);
             this.NuevoButton.TabIndex = 12;
@@ -183,7 +183,7 @@
             this.EliminarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.EliminarButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
-            this.EliminarButton.Location = new System.Drawing.Point(245, 247);
+            this.EliminarButton.Location = new System.Drawing.Point(280, 246);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(89, 52);
             this.EliminarButton.TabIndex = 13;
@@ -198,7 +198,7 @@
             this.BuscarButton.BackColor = System.Drawing.Color.White;
             this.BuscarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(285, 3);
+            this.BuscarButton.Location = new System.Drawing.Point(246, 3);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(91, 35);
             this.BuscarButton.TabIndex = 21;
@@ -267,7 +267,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(481, 301);
+            this.ClientSize = new System.Drawing.Size(402, 301);
             this.Controls.Add(this.AdministradorRadioButton);
             this.Controls.Add(this.UsuarioRadioButton);
             this.Controls.Add(this.FechaRegistroDateTimePicker);

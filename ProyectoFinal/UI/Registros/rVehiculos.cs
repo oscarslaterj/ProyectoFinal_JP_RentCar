@@ -21,6 +21,7 @@ namespace ProyectoFinal.UI.Registros
         {
             InitializeComponent();
             LlenarTipoCombo();
+            LlenarColorCombo();
         }
         private void Limpiar()
         {
@@ -28,6 +29,7 @@ namespace ProyectoFinal.UI.Registros
             ModeloTextBox.Text = string.Empty;
             PrecioNumericUpDown.Value = 0;
             TipoComboBox.Items.Clear();
+            ColorComboBox.Items.Clear();
             MarcaTextBox.Text = string.Empty;
             PlacaTextBox.Text = string.Empty;
             AnioTextBox.Text = string.Empty;
@@ -281,6 +283,20 @@ namespace ProyectoFinal.UI.Registros
 
         }
 
-       
+        private void LlenarColorCombo()
+        {
+            ColorComboBox.Items.Add("Azul");
+            ColorComboBox.Items.Add("Rojo");
+            ColorComboBox.Items.Add("Amarillo");
+            ColorComboBox.Items.Add("Blanco");
+            ColorComboBox.Items.Add("Negro");
+            ColorComboBox.Items.Add("Dorado");
+            ColorComboBox.Items.Add("Naranja");
+            ColorComboBox.Items.Add("Verde");
+            ColorComboBox.Items.Add("Plateado");
+
+        }
+
+
     }
     }

@@ -1,5 +1,6 @@
 ﻿using ProyectoFinal.BLL;
 using ProyectoFinal.Entidades;
+using ProyectoFinal.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,7 +107,12 @@ namespace ProyectoFinal.UI.Consultas
            
         }
 
-
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            ReporteUsers reporte = new ReporteUsers(repositorio);
+            reporte.Show();
+        }
     }
 }
     
