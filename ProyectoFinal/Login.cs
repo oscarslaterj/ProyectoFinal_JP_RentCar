@@ -35,12 +35,26 @@ namespace ProyectoFinal
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            int paso = 0;
-            Expression<Func<Usuarios, bool>> filtrar = x => true;
+            //int paso = 0;
+            //Expression<Func<Usuarios, bool>> filtrar = x => true;
             List<Usuarios> user = new List<Usuarios>();
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            user = repositorio.GetList(x => x.NombreUser.Equals(UsuarioTextBox.Text) && x.Clave.Equals(ContrasenaTextBox.Text));
 
             CleanProvider();
-            if (UsuarioTextBox.Text == string.Empty)
+            if(user.Count > 0)
+            {
+                this.Hide();
+                mainform ver = new mainform();
+                ver.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nombre de usuario o contraseña incorrecta!!");
+                LogInErrorProvider.SetError(ContrasenaTextBox, "Incorrecto");
+                LogInErrorProvider.SetError(UsuarioTextBox, "Incorrecto");
+            }
+            /*if (UsuarioTextBox.Text == string.Empty)
             {
                 paso = 1;
                 LogInErrorProvider.SetError(UsuarioTextBox, "Incorrecto");
@@ -81,8 +95,8 @@ namespace ProyectoFinal
                     LogInErrorProvider.SetError(ContrasenaTextBox, "Incorrecto");
                     LogInErrorProvider.SetError(UsuarioTextBox, "Incorrecto");
                 }
-            }
-            ContrasenaTextBox.MaxLength = 14;
+            }*/
+            //ContrasenaTextBox.MaxLength = 14;
         }
 
      
