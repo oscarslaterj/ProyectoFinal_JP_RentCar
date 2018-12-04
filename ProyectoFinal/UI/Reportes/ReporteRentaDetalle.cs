@@ -14,6 +14,11 @@ namespace ProyectoFinal.UI.Reportes
     public partial class ReporteRentaDetalle : Form
     {
         List<Renta> data = new List<Renta>();
+
+        public ReporteRentaDetalle()
+        {
+        }
+
         public ReporteRentaDetalle(List<Renta> lista)
         {
             InitializeComponent();

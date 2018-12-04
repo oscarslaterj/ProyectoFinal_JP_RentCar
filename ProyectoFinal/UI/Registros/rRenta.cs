@@ -185,8 +185,9 @@ namespace ProyectoFinal.UI.Registros
                 MessageBox.Show("Guardado");
                 if (resultado == DialogResult.Yes)
                 {
-                  //  ReporteRentaDetalle reporte = new ReporteRentaDetalle(renta.Detalle);
-                   // reporte.Show();
+                    
+                    ReporteRentaDetalle reporte = new ReporteRentaDetalle();
+                    reporte.Show();
                 }
                 Limpiar();
             }
